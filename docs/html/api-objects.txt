@@ -41,6 +41,7 @@ theia.helpers.units.Hz	theia.helpers.units-module.html#Hz
 theia.helpers.units.nm	theia.helpers.units-module.html#nm
 theia.helpers.units.GHz	theia.helpers.units-module.html#GHz
 theia.helpers.units.__package__	theia.helpers.units-module.html#__package__
+theia.helpers.units.pi	theia.helpers.units-module.html#pi
 theia.helpers.units.uHz	theia.helpers.units-module.html#uHz
 theia.helpers.units.uW	theia.helpers.units-module.html#uW
 theia.helpers.units.mW	theia.helpers.units-module.html#mW
@@ -65,8 +66,8 @@ theia.optics.__maintainer__	theia.optics-module.html#__maintainer__
 theia.optics.__email__	theia.optics-module.html#__email__
 theia.optics.__package__	theia.optics-module.html#__package__
 theia.optics.beam	theia.optics.beam-module.html
-theia.optics.beam.formatter	theia.helpers.tools-module.html#formatter
 theia.optics.beam.__package__	theia.optics.beam-module.html#__package__
+theia.optics.beam.formatter	theia.helpers.tools-module.html#formatter
 theia.optics.beamdump	theia.optics.beamdump-module.html
 theia.optics.beamdump.lineCylInter	theia.helpers.geometry-module.html#lineCylInter
 theia.optics.beamdump.rectToSph	theia.helpers.geometry-module.html#rectToSph
