@@ -1,7 +1,7 @@
 #gem stuff
 Gemfile.lock
-#vendor/
-#.bundle/
+vendor/
+.bundle/
 
 #used only here
 makefile
