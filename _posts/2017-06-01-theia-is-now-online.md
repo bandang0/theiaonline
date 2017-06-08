@@ -15,4 +15,4 @@ import theia
 surf to [theiaonline.eu][1] and catch up on the evolution of the theia project!
 
 
-[1]: http://37.117.61.221:56000
+[1]: ../../../index.html
