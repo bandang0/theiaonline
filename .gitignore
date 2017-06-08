@@ -1,0 +1,12 @@
+#gem stuff
+Gemfile.lock
+vendor/
+.bundle/
+
+#used only here
+makefile
+bin/
+
+#compiled site
+_site/
+.sass-cache/

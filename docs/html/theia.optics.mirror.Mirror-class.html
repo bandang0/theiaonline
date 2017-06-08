@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>theia.optics.mirror.Mirror</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="theia-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://37.117.61.221:56000">theia</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="theia-module.html">Package&nbsp;theia</a> ::
+        <a href="theia.optics-module.html">Package&nbsp;optics</a> ::
+        <a href="theia.optics.mirror-module.html">Module&nbsp;mirror</a> ::
+        Class&nbsp;Mirror
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="theia.optics.mirror.Mirror-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Mirror</h1><p class="nomargin-top"><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_theia_op_5" name="uml_class_diagram_for_theia_op_5">
+<area shape="rect" id="node1_14" href="theia.optics.mirror.Mirror-class.html#__abstractmethods__" title="theia.optics.mirror.Mirror.__abstractmethods__" alt="" coords="18,273,1417,293"/>
+<area shape="rect" id="node1_15" href="theia.optics.mirror.Mirror-class.html#__init__" title="Mirror initializer." alt="" coords="18,296,1417,316"/>
+<area shape="rect" id="node1_16" href="theia.optics.mirror.Mirror-class.html#lines" title="Returns the list of lines necessary to print the object." alt="" coords="18,316,1417,336"/>
+<area shape="rect" id="node1_17" href="theia.optics.mirror.Mirror-class.html#isHit" title="Determine if a beam hits the Optic." alt="" coords="18,336,1417,356"/>
+<area shape="rect" id="node1_18" href="theia.optics.mirror.Mirror-class.html#hit" title="Compute the refracted and reflected beams after interaction." alt="" coords="18,356,1417,376"/>
+<area shape="rect" id="node1_19" href="theia.optics.mirror.Mirror-class.html#hitHR" title="Compute the daughter beams after interaction on HR at point." alt="" coords="18,376,1417,396"/>
+<area shape="rect" id="node1_20" href="theia.optics.mirror.Mirror-class.html#hitAR" title="Compute the daughter beams after interaction on AR at point." alt="" coords="18,396,1417,416"/>
+<area shape="rect" id="node1" href="theia.optics.mirror.Mirror-class.html" title="Mirror class." alt="" coords="5,249,1428,423"/>
+<area shape="rect" id="node2_21" href="theia.optics.optic.Optic-class.html#OptCount" title="theia.optics.optic.Optic.OptCount" alt="" coords="653,142,783,162"/>
+<area shape="rect" id="node2_22" href="theia.optics.optic.Optic-class.html#collision" title="Determine whether the HR and AR surfaces intersect." alt="" coords="653,165,783,185"/>
+<area shape="rect" id="node2_23" href="theia.optics.optic.Optic-class.html#geoCheck" title="Makes geometrical checks on surfaces and warns when necessary." alt="" coords="653,185,783,205"/>
+<area shape="rect" id="node2_24" href="theia.optics.optic.Optic-class.html#hitSide" title="Compute the daughter beams after interaction on Side at point." alt="" coords="653,205,783,225"/>
+<area shape="rect" id="node2" href="theia.optics.optic.Optic-class.html" title="Optic class." alt="" coords="641,117,795,231"/>
+<area shape="rect" id="node3_25" href="theia.optics.component.SetupComponent-class.html#SetupCount" title="theia.optics.component.SetupComponent.SetupCount" alt="" coords="633,29,802,49"/>
+<area shape="rect" id="node3_26" href="abc.ABCMeta-class.html" title="Metaclass for defining Abstract Base Classes (ABCs)." alt="" coords="633,49,802,69"/>
+<area shape="rect" id="node3_27" href="theia.optics.component.SetupComponent-class.html#__str__" title="String representation of the component, when calling print(object)." alt="" coords="633,72,802,92"/>
+<area shape="rect" id="node3" href="theia.optics.component.SetupComponent-class.html" title="SetupComponent class." alt="" coords="620,5,813,99"/>
+</map>
+  <img src="uml_class_diagram_for_theia_op_5.gif" alt='' usemap="#uml_class_diagram_for_theia_op_5" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<pre class="literalblock">
+
+
+Mirror class.
+
+This class represents semi reflective mirrors composed of two faces (HR, AR)
+and with a wedge angle. These are the objects with which the beams will
+interqct during the ray tracing. Please see the documentation for details
+on the geometric construction of these mirrors.
+
+*=== Attributes ===*
+SetupCount (inherited): class attribute, counts all setup components.
+    [integer]
+OptCount (inherited): class attribute, counts optical components. [string]
+HRCenter (inherited): center of the 'chord' of the HR surface. [3D vector]
+HRNorm (inherited): unitary normal to the 'chord' of the HR (always pointing
+ towards the outside of the component). [3D vector]
+Thick (inherited): thickness of the optic, counted in opposite direction to
+    HRNorm. [float]
+Dia (inherited): diameter of the component. [float]
+Name (inherited): name of the component. [string]
+Ref (inherited): reference string (for keeping track with the lab). [string]
+ARCenter (inherited): center of the 'chord' of the AR surface. [3D vector]
+ARNorm (inherited): unitary normal to the 'chord' of the AR (always pointing
+    towards the outside of the component). [3D vector]
+N (inherited): refraction index of the material. [float]
+HRK, ARK (inherited): curvature of the HR, AR surfaces. [float]
+HRr, HRt, ARr, ARt (inherited): power reflectance and transmission
+coefficients of the HR and AR surfaces. [float]
+KeepI (inherited): whether of not to keep data of rays for interference
+calculations on the HR. [boolean]
+Wedge: wedge angle of the mirror, please refer to the documentation for
+    detaild on the geometry of mirrors and their implementation here.
+    [float]
+Alpha: rotation alngle used in the geometrical construction of the mirror
+    (see doc, it is the amgle between the projection of Ex on the AR plane
+    and the vector from ARCenter to the point where the cylinder and the AR
+    face meet). [float]
+
+**Note**: the curvature of any surface is positive for a concave surface
+(coating inside the sphere).
+Thus kurv*HRNorm/|kurv| always points to the center
+of the sphere of the surface, as is the convention for the lineSurfInter of
+geometry module. Same for AR.
+
+*******     HRK &gt; 0 and ARK &gt; 0     *******           HRK &gt; 0 and ARK &lt; 0
+ *****                               ********         and |ARK| &gt; |HRK|
+ H***A                               H*********A
+ *****                               ********
+*******                             *******
+
+</pre>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
+      <code><a href="abc.ABCMeta-class.html">__metaclass__</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.mirror.Mirror-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Wedge</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Alpha</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">X</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Y</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Z</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Theta</span>=<span class="summary-sig-default">1.57079632679</span>,
+        <span class="summary-sig-arg">Phi</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Diameter</span>=<span class="summary-sig-default">0.1</span>,
+        <span class="summary-sig-arg">HRr</span>=<span class="summary-sig-default">0.99</span>,
+        <span class="summary-sig-arg">HRt</span>=<span class="summary-sig-default">0.01</span>,
+        <span class="summary-sig-arg">ARr</span>=<span class="summary-sig-default">0.1</span>,
+        <span class="summary-sig-arg">ARt</span>=<span class="summary-sig-default">0.9</span>,
+        <span class="summary-sig-arg">HRK</span>=<span class="summary-sig-default">0.01</span>,
+        <span class="summary-sig-arg">ARK</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">Thickness</span>=<span class="summary-sig-default">0.02</span>,
+        <span class="summary-sig-arg">N</span>=<span class="summary-sig-default">1.4585</span>,
+        <span class="summary-sig-arg">KeepI</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">Name</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Mirror</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">Ref</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Mirror initializer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.mirror.Mirror-class.html#lines" class="summary-sig-name">lines</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the list of lines necessary to print the object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.mirror.Mirror-class.html#isHit" class="summary-sig-name">isHit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">beam</span>)</span><br />
+      Determine if a beam hits the Optic.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.isHit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.mirror.Mirror-class.html#hit" class="summary-sig-name">hit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">beam</span>,
+        <span class="summary-sig-arg">order</span>,
+        <span class="summary-sig-arg">threshold</span>)</span><br />
+      Compute the refracted and reflected beams after interaction.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.hit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.mirror.Mirror-class.html#hitHR" class="summary-sig-name">hitHR</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">beam</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">order</span>,
+        <span class="summary-sig-arg">threshold</span>)</span><br />
+      Compute the daughter beams after interaction on HR at point.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.hitHR">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.mirror.Mirror-class.html#hitAR" class="summary-sig-name">hitAR</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">beam</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">order</span>,
+        <span class="summary-sig-arg">threshold</span>)</span><br />
+      Compute the daughter beams after interaction on AR at point.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.hitAR">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.optic.Optic-class.html">optic.Optic</a></code></b>:
+      <code><a href="theia.optics.optic.Optic-class.html#collision">collision</a></code>,
+      <code><a href="theia.optics.optic.Optic-class.html#geoCheck">geoCheck</a></code>,
+      <code><a href="theia.optics.optic.Optic-class.html#hitSide">hitSide</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
+      <code><a href="theia.optics.component.SetupComponent-class.html#__str__">__str__</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__abstractmethods__"></a><span class="summary-name">__abstractmethods__</span> = <code title="frozenset([])"><code class="variable-group">frozenset([</code><code class="variable-group">])</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.optic.Optic-class.html">optic.Optic</a></code></b>:
+      <code><a href="theia.optics.optic.Optic-class.html#OptCount">OptCount</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
+      <code><a href="theia.optics.component.SetupComponent-class.html#SetupCount">SetupCount</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b> (private):
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_cache" onclick="show_private();">_abc_cache</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_negative_cache" onclick="show_private();">_abc_negative_cache</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_negative_cache_version" onclick="show_private();">_abc_negative_cache_version</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_registry" onclick="show_private();">_abc_registry</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Wedge</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Alpha</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">X</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Y</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Z</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Theta</span>=<span class="sig-default">1.57079632679</span>,
+        <span class="sig-arg">Phi</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Diameter</span>=<span class="sig-default">0.1</span>,
+        <span class="sig-arg">HRr</span>=<span class="sig-default">0.99</span>,
+        <span class="sig-arg">HRt</span>=<span class="sig-default">0.01</span>,
+        <span class="sig-arg">ARr</span>=<span class="sig-default">0.1</span>,
+        <span class="sig-arg">ARt</span>=<span class="sig-default">0.9</span>,
+        <span class="sig-arg">HRK</span>=<span class="sig-default">0.01</span>,
+        <span class="sig-arg">ARK</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">Thickness</span>=<span class="sig-default">0.02</span>,
+        <span class="sig-arg">N</span>=<span class="sig-default">1.4585</span>,
+        <span class="sig-arg">KeepI</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">Name</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">Mirror</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">Ref</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Mirror initializer.</p>
+  <p>Parameters are the attributes and the angles theta and phi are 
+  spherical coordinates of HRNorm.</p>
+  <p>Returns a mirror.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="lines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lines</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.lines">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the list of lines necessary to print the object.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="theia.optics.component.SetupComponent-class.html#lines">component.SetupComponent.lines</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHit</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">beam</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.isHit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Determine if a beam hits the Optic.
+
+This is a function for mirrors, using their geometrical
+attributes. This uses the line***Inter functions from the geometry
+module to find characteristics of impact of beams on mirrors.
+
+beam: incoming beam. [GaussianBeam]
+
+Returns a dictionary with keys:
+    'isHit': whether the beam hits the optic. [boolean]
+    'intersection point': point in space where it is first hit.
+            [3D vector]
+    'face': to indicate which face is first hit, can be 'HR', 'AR' or
+        'side'. [string]
+    'distance': geometrical distance from beam origin to impact. [float]
+
+</pre>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="theia.optics.component.SetupComponent-class.html#isHit">component.SetupComponent.isHit</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hit</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">beam</span>,
+        <span class="sig-arg">order</span>,
+        <span class="sig-arg">threshold</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.hit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Compute the refracted and reflected beams after interaction.
+
+The beams returned are those selected after the order and threshold
+criterion.
+
+beam: incident beam. [GaussianBeam]
+order: maximum strayness of daughter beams, whixh are not returned if
+    their strayness is over this order. [integer]
+threshold: idem for the power of the daughter beams. [float]
+
+Returns a dictionary of beams with keys:
+    't': refracted beam. [GaussianBeam]
+    'r': reflected beam. [GaussianBeam]
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="hitHR"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hitHR</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">beam</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">order</span>,
+        <span class="sig-arg">threshold</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.hitHR">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Compute the daughter beams after interaction on HR at point.
+
+beam: incident beam. [GaussianBeam]
+point: point in space of interaction. [3D vector]
+order: maximum strayness of daughter beams, whixh are not returned if
+    their strayness is over this order. [integer]
+threshold: idem for the power of the daughter beams. [float]
+
+Returns a dictionary of beams with keys:
+    't': refracted beam. [GaussianBeam]
+    'r': reflected beam. [GaussianBeam]
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="hitAR"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hitAR</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">beam</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">order</span>,
+        <span class="sig-arg">threshold</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.mirror-pysrc.html#Mirror.hitAR">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Compute the daughter beams after interaction on AR at point.
+
+beam: incident beam. [GaussianBeam]
+point: point in space of interaction. [3D vector]
+order: maximum strayness of daughter beams, which are not returned if
+    their strayness is over this order. [integer]
+threshold: idem for the power of the daughter beams. [float]
+
+Returns a dictionary of beams with keys:
+    't': refracted beam. [GaussianBeam]
+    'r': reflected beam. [GaussianBeam]
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="theia-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://37.117.61.221:56000">theia</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun  6 15:39:23 2017
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
