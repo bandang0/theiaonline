@@ -65,20 +65,19 @@
 <h1 class="epydoc">Class GaussianBeam</h1><p class="nomargin-top"><span class="codelink"><a href="theia.optics.beam-pysrc.html#GaussianBeam">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_theia_op" name="uml_class_diagram_for_theia_op">
-<area shape="rect" id="node1_13" href="theia.optics.beam.GaussianBeam-class.html#BeamCount" title="theia.optics.beam.GaussianBeam.BeamCount" alt="" coords="17,29,1121,49"/>
-<area shape="rect" id="node1_14" href="theia.optics.beam.GaussianBeam-class.html#__init__" title="Beam initializer." alt="" coords="17,52,1121,72"/>
-<area shape="rect" id="node1_15" href="theia.optics.beam.GaussianBeam-class.html#userGaussianBeam" title="Constructor used for user inputed beams, separated from the class &#160;initializer because the internal state of a beam is very different from the input of this user&#45;defined beam." alt="" coords="17,72,1121,92"/>
-<area shape="rect" id="node1_16" href="theia.optics.beam.GaussianBeam-class.html#__str__" title="String representation of the beam, when calling print(beam)." alt="" coords="17,92,1121,112"/>
-<area shape="rect" id="node1_17" href="theia.optics.beam.GaussianBeam-class.html#lines" title="Returns the list of lines necessary to print the object." alt="" coords="17,112,1121,132"/>
-<area shape="rect" id="node1_18" href="theia.optics.beam.GaussianBeam-class.html#Q" title="Return the Q tensor at a distance d of origin." alt="" coords="17,132,1121,152"/>
-<area shape="rect" id="node1_19" href="theia.optics.beam.GaussianBeam-class.html#QParam" title="Compute the complex parameters q1 and q2 and theta of beam." alt="" coords="17,152,1121,172"/>
-<area shape="rect" id="node1_20" href="theia.optics.beam.GaussianBeam-class.html#ROC" title="Return the tuple of ROC of the beam." alt="" coords="17,172,1121,192"/>
-<area shape="rect" id="node1_21" href="theia.optics.beam.GaussianBeam-class.html#waistPos" title="Return the tuple of positions of the waists of the beam along Dir." alt="" coords="17,192,1121,212"/>
-<area shape="rect" id="node1_22" href="theia.optics.beam.GaussianBeam-class.html#rayleigh" title="Return the tuple of Rayleigh ranges of the beam." alt="" coords="17,212,1121,232"/>
-<area shape="rect" id="node1_23" href="theia.optics.beam.GaussianBeam-class.html#width" title="Return the tuple of beam widths." alt="" coords="17,232,1121,252"/>
-<area shape="rect" id="node1_24" href="theia.optics.beam.GaussianBeam-class.html#waistSize" title="Return a tuple with the waist sizes in x and y." alt="" coords="17,252,1121,272"/>
-<area shape="rect" id="node1_25" href="theia.optics.beam.GaussianBeam-class.html#gouy" title="Return the tuple of Gouy phases." alt="" coords="17,272,1121,292"/>
-<area shape="rect" id="node1" href="theia.optics.beam.GaussianBeam-class.html" title="GaussianBeam class." alt="" coords="5,5,1133,299"/>
+<area shape="rect" id="node1_12" href="theia.optics.beam.GaussianBeam-class.html#BeamCount" title="theia.optics.beam.GaussianBeam.BeamCount" alt="" coords="18,30,601,50"/>
+<area shape="rect" id="node1_13" href="theia.optics.beam.GaussianBeam-class.html#__init__" title="Beam initializer." alt="" coords="18,53,601,73"/>
+<area shape="rect" id="node1_14" href="theia.optics.beam.GaussianBeam-class.html#__str__" title="String representation of the beam, when calling print(beam)." alt="" coords="18,73,601,93"/>
+<area shape="rect" id="node1_15" href="theia.optics.beam.GaussianBeam-class.html#lines" title="Returns the list of lines necessary to print the object." alt="" coords="18,93,601,113"/>
+<area shape="rect" id="node1_16" href="theia.optics.beam.GaussianBeam-class.html#Q" title="Return the Q tensor at a distance d of origin." alt="" coords="18,113,601,133"/>
+<area shape="rect" id="node1_17" href="theia.optics.beam.GaussianBeam-class.html#QParam" title="Compute the complex parameters q1 and q2 and theta of beam." alt="" coords="18,133,601,153"/>
+<area shape="rect" id="node1_18" href="theia.optics.beam.GaussianBeam-class.html#ROC" title="Return the tuple of ROC of the beam." alt="" coords="18,153,601,173"/>
+<area shape="rect" id="node1_19" href="theia.optics.beam.GaussianBeam-class.html#waistPos" title="Return the tuple of positions of the waists of the beam along Dir." alt="" coords="18,173,601,193"/>
+<area shape="rect" id="node1_20" href="theia.optics.beam.GaussianBeam-class.html#rayleigh" title="Return the tuple of Rayleigh ranges of the beam." alt="" coords="18,193,601,213"/>
+<area shape="rect" id="node1_21" href="theia.optics.beam.GaussianBeam-class.html#width" title="Return the tuple of beam widths." alt="" coords="18,213,601,233"/>
+<area shape="rect" id="node1_22" href="theia.optics.beam.GaussianBeam-class.html#waistSize" title="Return a tuple with the waist sizes in x and y." alt="" coords="18,233,601,253"/>
+<area shape="rect" id="node1_23" href="theia.optics.beam.GaussianBeam-class.html#gouy" title="Return the tuple of Gouy phases." alt="" coords="18,253,601,273"/>
+<area shape="rect" id="node1" href="theia.optics.beam.GaussianBeam-class.html" title="GaussianBeam class." alt="" coords="5,5,612,279"/>
 </map>
   <img src="uml_class_diagram_for_theia_op.gif" alt='' usemap="#uml_class_diagram_for_theia_op" ismap="ismap" class="graph-without-title" />
 </center>
@@ -360,57 +359,6 @@ Face: face of the optic where the beam departs from. [string]
     </td>
   </tr>
 </table>
-<!-- ==================== CLASS METHODS ==================== -->
-<a name="section-ClassMethods"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Class Methods</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassMethods"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="theia.optics.beam.GaussianBeam-class.html#userGaussianBeam" class="summary-sig-name">userGaussianBeam</a>(<span class="summary-sig-arg">cls</span>,
-        <span class="summary-sig-arg">Wx</span>=<span class="summary-sig-default">0.001</span>,
-        <span class="summary-sig-arg">Wy</span>=<span class="summary-sig-default">0.001</span>,
-        <span class="summary-sig-arg">WDistx</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">WDisty</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Wl</span>=<span class="summary-sig-default">1.064e-06</span>,
-        <span class="summary-sig-arg">P</span>=<span class="summary-sig-default">1.0</span>,
-        <span class="summary-sig-arg">X</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Y</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Z</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Theta</span>=<span class="summary-sig-default">1.57079632679</span>,
-        <span class="summary-sig-arg">Phi</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Alpha</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Name</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">Ref</span>=<span class="summary-sig-default">None</span>)</span><br />
-      Constructor used for user inputed beams, separated from the class 
-      initializer because the internal state of a beam is very different 
-      from the input of this user-defined beam.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="theia.optics.beam-pysrc.html#GaussianBeam.userGaussianBeam">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-</table>
 <!-- ==================== CLASS VARIABLES ==================== -->
 <a name="section-ClassVariables"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -520,44 +468,6 @@ Face: face of the optic where the beam departs from. [string]
   </dl>
 </td></tr></table>
 </div>
-<a name="userGaussianBeam"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">userGaussianBeam</span>(<span class="sig-arg">cls</span>,
-        <span class="sig-arg">Wx</span>=<span class="sig-default">0.001</span>,
-        <span class="sig-arg">Wy</span>=<span class="sig-default">0.001</span>,
-        <span class="sig-arg">WDistx</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">WDisty</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Wl</span>=<span class="sig-default">1.064e-06</span>,
-        <span class="sig-arg">P</span>=<span class="sig-default">1.0</span>,
-        <span class="sig-arg">X</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Y</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Z</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Theta</span>=<span class="sig-default">1.57079632679</span>,
-        <span class="sig-arg">Phi</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Alpha</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Name</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">Ref</span>=<span class="sig-default">None</span>)</span>
-    <br /><em class="fname">Class Method</em>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="theia.optics.beam-pysrc.html#GaussianBeam.userGaussianBeam">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Constructor used for user inputed beams, separated from the class 
-  initializer because the internal state of a beam is very different from 
-  the input of this user-defined beam.</p>
-  <p>Input parameters are processed to make arguments for the class 
-  contructor and then the corresponding beam is returned.</p>
-  <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
 <a name="__str__"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -636,7 +546,7 @@ Face: face of the optic where the beam departs from. [string]
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Thu Jun  8 15:38:14 2017
+    on Tue Jun 13 14:30:27 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

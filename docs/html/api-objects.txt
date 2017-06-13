@@ -66,6 +66,7 @@ theia.optics.__maintainer__	theia.optics-module.html#__maintainer__
 theia.optics.__email__	theia.optics-module.html#__email__
 theia.optics.__package__	theia.optics-module.html#__package__
 theia.optics.beam	theia.optics.beam-module.html
+theia.optics.beam.userGaussianBeam	theia.optics.beam-module.html#userGaussianBeam
 theia.optics.beam.__package__	theia.optics.beam-module.html#__package__
 theia.optics.beam.formatter	theia.helpers.tools-module.html#formatter
 theia.optics.beamdump	theia.optics.beamdump-module.html
@@ -136,6 +137,7 @@ theia.running.parser.arccos	theia.running.parser-module.html#arccos
 theia.running.parser.kW	theia.running.parser-module.html#kW
 theia.running.parser.deg	theia.running.parser-module.html#deg
 theia.running.simulation	theia.running.simulation-module.html
+theia.running.simulation.userGaussianBeam	theia.optics.beam-module.html#userGaussianBeam
 theia.running.simulation.formatter	theia.helpers.tools-module.html#formatter
 theia.running.simulation.__package__	theia.running.simulation-module.html#__package__
 theia.tree	theia.tree-module.html
@@ -163,7 +165,6 @@ theia.helpers.tools.TotalReflectionError	theia.helpers.tools.TotalReflectionErro
 theia.helpers.tools.TotalReflectionError.__str__	theia.helpers.tools.TotalReflectionError-class.html#__str__
 theia.helpers.tools.TotalReflectionError.__init__	theia.helpers.tools.TotalReflectionError-class.html#__init__
 theia.optics.beam.GaussianBeam	theia.optics.beam.GaussianBeam-class.html
-theia.optics.beam.GaussianBeam.userGaussianBeam	theia.optics.beam.GaussianBeam-class.html#userGaussianBeam
 theia.optics.beam.GaussianBeam.waistPos	theia.optics.beam.GaussianBeam-class.html#waistPos
 theia.optics.beam.GaussianBeam.rayleigh	theia.optics.beam.GaussianBeam-class.html#rayleigh
 theia.optics.beam.GaussianBeam.__str__	theia.optics.beam.GaussianBeam-class.html#__str__
