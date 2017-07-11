@@ -2,6 +2,7 @@
 layout: page
 title: Getting theia
 permalink: /releases/
+showhead: true
 ---
 
 ### Releases
