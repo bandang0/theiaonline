@@ -34,7 +34,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -65,14 +65,15 @@
 <h1 class="epydoc">Class BeamTree</h1><p class="nomargin-top"><span class="codelink"><a href="theia.tree.beamtree-pysrc.html#BeamTree">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_theia_tr" name="uml_class_diagram_for_theia_tr">
-<area shape="rect" id="node1_7" href="theia.tree.beamtree.BeamTree-class.html#__init__" title="BeamTree initializer." alt="" coords="17,37,284,57"/>
-<area shape="rect" id="node1_8" href="theia.tree.beamtree.BeamTree-class.html#__str__" title="String representation of a BeamTree, for print(tree)." alt="" coords="17,57,284,77"/>
-<area shape="rect" id="node1_9" href="theia.tree.beamtree.BeamTree-class.html#lines" title="Returns the list of lines necessary to print the object." alt="" coords="17,77,284,97"/>
-<area shape="rect" id="node1_10" href="theia.tree.beamtree.BeamTree-class.html#beamList" title="Returns the string representation the tree of beams." alt="" coords="17,97,284,117"/>
-<area shape="rect" id="node1_11" href="theia.tree.beamtree.BeamTree-class.html#beamLines" title="Returns the list of lines necessary to print the list of beams." alt="" coords="17,117,284,137"/>
-<area shape="rect" id="node1_12" href="theia.tree.beamtree.BeamTree-class.html#numberOfBeams" title="Return the total number of beams." alt="" coords="17,137,284,157"/>
-<area shape="rect" id="node1_13" href="theia.tree.beamtree.BeamTree-class.html#outputLines" title="Return the list of lines necessary to write the output of simulation." alt="" coords="17,157,284,177"/>
-<area shape="rect" id="node1" href="theia.tree.beamtree.BeamTree-class.html" title="BeamTree class." alt="" coords="5,5,296,184"/>
+<area shape="rect" id="node1_8" href="theia.tree.beamtree.BeamTree-class.html#Name" title="theia.tree.beamtree.BeamTree.Name" alt="" coords="17,30,284,50"/>
+<area shape="rect" id="node1_9" href="theia.tree.beamtree.BeamTree-class.html#__init__" title="BeamTree initializer." alt="" coords="17,53,284,73"/>
+<area shape="rect" id="node1_10" href="theia.tree.beamtree.BeamTree-class.html#__str__" title="String representation of a BeamTree, for print(tree)." alt="" coords="17,73,284,93"/>
+<area shape="rect" id="node1_11" href="theia.tree.beamtree.BeamTree-class.html#lines" title="Returns the list of lines necessary to print the object." alt="" coords="17,93,284,113"/>
+<area shape="rect" id="node1_12" href="theia.tree.beamtree.BeamTree-class.html#beamList" title="Returns the string representation the tree of beams." alt="" coords="17,113,284,133"/>
+<area shape="rect" id="node1_13" href="theia.tree.beamtree.BeamTree-class.html#beamLines" title="Returns the list of lines necessary to print the list of beams." alt="" coords="17,133,284,153"/>
+<area shape="rect" id="node1_14" href="theia.tree.beamtree.BeamTree-class.html#numberOfBeams" title="Return the total number of beams." alt="" coords="17,153,284,173"/>
+<area shape="rect" id="node1_15" href="theia.tree.beamtree.BeamTree-class.html#outputLines" title="Return the list of lines necessary to write the output of simulation." alt="" coords="17,173,284,193"/>
+<area shape="rect" id="node1" href="theia.tree.beamtree.BeamTree-class.html" title="BeamTree class." alt="" coords="5,5,296,199"/>
 </map>
   <img src="uml_class_diagram_for_theia_tr.gif" alt='' usemap="#uml_class_diagram_for_theia_tr" ismap="ismap" class="graph-without-title" />
 </center>
@@ -83,10 +84,10 @@
   they are traced throughout the optical setup. The Root of the tree is a 
   Gaussian beam and the other attributes are the daughter trees and all the
   data of the interaction producing these with the Root beam</p>
-  <p>*=== Attributes ===* Root: beam of this node of the tree. 
-  [GaussianBeam] T: beam resulting from the transmission of the Root beam. 
-  [BeamTree] R: beam resulting from the reflection of the Root beam. 
-  [BeamTree]</p>
+  <p>*=== Attributes ===* Name: class attribute, name of object. [string] 
+  Root: beam of this node of the tree. [GaussianBeam] T: beam resulting 
+  from the transmission of the Root beam. [BeamTree] R: beam resulting from
+  the reflection of the Root beam. [BeamTree]</p>
 
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
@@ -245,6 +246,31 @@
     </td>
   </tr>
 </table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Name"></a><span class="summary-name">Name</span> = <code title="'BeamTree'"><code class="variable-quote">'</code><code class="variable-string">BeamTree</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
 <!-- ==================== PROPERTIES ==================== -->
 <a name="section-Properties"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -362,7 +388,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -370,7 +396,7 @@
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jun 13 14:30:27 2017
+    on Tue Jul 11 10:03:23 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

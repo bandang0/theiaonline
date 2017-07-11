@@ -34,7 +34,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -79,45 +79,48 @@
 <a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">text</tt> </tt>
 <a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">cad</tt> </tt>
 <a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">fname</tt> </tt>
-<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
-<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt class="py-comment">#geometry</tt> </tt>
-<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">zero</tt> <tt class="py-comment">#geometrical 0 distance (for seperation)</tt> </tt>
-<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">inf</tt>  <tt class="py-comment"># geometrical infinite</tt> </tt>
-<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">flatK</tt>    <tt class="py-comment"># curvature of a flat surface</tt> </tt>
-<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
-<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt class="py-comment">#distionary of orders in which input is given in .tia</tt> </tt>
-<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">inOrder</tt> </tt>
-<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
-<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-comment">#geometry</tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-name">zero</tt> <tt class="py-op">=</tt> <tt class="py-number">1.e-10</tt> </tt>
-<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt class="py-name">inf</tt> <tt class="py-op">=</tt> <tt class="py-number">1.e15</tt> </tt>
-<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">flatK</tt> <tt class="py-op">=</tt> <tt class="py-number">1.e-5</tt> </tt>
-<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
-<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-comment">#order of data in .tia</tt> </tt>
-<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
-<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'bm'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'Wx'</tt><tt class="py-op">,</tt><tt class="py-string">'Wy'</tt><tt class="py-op">,</tt><tt class="py-string">'WDistx'</tt><tt class="py-op">,</tt><tt class="py-string">'WDisty'</tt><tt class="py-op">,</tt><tt class="py-string">'Wl'</tt><tt class="py-op">,</tt><tt class="py-string">'P'</tt><tt class="py-op">,</tt> </tt>
-<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">            <tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Alpha'</tt><tt class="py-op">,</tt><tt class="py-string">'Name'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
-<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"> </tt>
-<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'mr'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Wedge'</tt><tt class="py-op">,</tt><tt class="py-string">'Alpha'</tt><tt class="py-op">,</tt> </tt>
-<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">            <tt class="py-string">'HRK'</tt><tt class="py-op">,</tt><tt class="py-string">'ARK'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt><tt class="py-string">'Thickness'</tt><tt class="py-op">,</tt><tt class="py-string">'N'</tt><tt class="py-op">,</tt><tt class="py-string">'HRr'</tt><tt class="py-op">,</tt><tt class="py-string">'HRt'</tt><tt class="py-op">,</tt><tt class="py-string">'ARr'</tt><tt class="py-op">,</tt><tt class="py-string">'ARt'</tt><tt class="py-op">,</tt> </tt>
-<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">            <tt class="py-string">'KeepI'</tt><tt class="py-op">,</tt> <tt class="py-string">'Name'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
-<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
-<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'th'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Focal'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt> </tt>
-<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">            <tt class="py-string">'R'</tt><tt class="py-op">,</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt><tt class="py-string">'KeepI'</tt><tt class="py-op">,</tt><tt class="py-string">'Name'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
-<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
-<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'tk'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'K1'</tt><tt class="py-op">,</tt><tt class="py-string">'K2'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt> </tt>
-<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-string">'Thickness'</tt><tt class="py-op">,</tt><tt class="py-string">'N'</tt><tt class="py-op">,</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt><tt class="py-string">'KeepI'</tt><tt class="py-op">,</tt><tt class="py-string">'Name'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
-<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"> </tt>
-<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'bd'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt><tt class="py-string">'Thickness'</tt><tt class="py-op">,</tt> </tt>
-<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">            <tt class="py-string">'Name'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
-<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt>
-<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-comment">#parsed from command line</tt> </tt>
-<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-name">info</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'info'</tt><tt class="py-op">]</tt> </tt>
-<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-name">warning</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'warning'</tt><tt class="py-op">]</tt> </tt>
-<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">    <tt class="py-name">text</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'text'</tt><tt class="py-op">]</tt> </tt>
-<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt class="py-name">cad</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'cad'</tt><tt class="py-op">]</tt> </tt>
-<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-name">fname</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'fname'</tt><tt class="py-op">]</tt> </tt>
-</div><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">fclib</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-comment">#geometry</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">zero</tt> <tt class="py-comment">#geometrical 0 distance (for seperation)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">inf</tt>  <tt class="py-comment"># geometrical infinite</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">flatK</tt>    <tt class="py-comment"># curvature of a flat surface</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-comment">#distionary of orders in which input is given in .tia</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">inOrder</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-comment">#geometry</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt class="py-name">zero</tt> <tt class="py-op">=</tt> <tt class="py-number">1.e-10</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">inf</tt> <tt class="py-op">=</tt> <tt class="py-number">1.e15</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">flatK</tt> <tt class="py-op">=</tt> <tt class="py-number">1.e-5</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-comment">#order of data in .tia</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'bm'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'Wx'</tt><tt class="py-op">,</tt><tt class="py-string">'Wy'</tt><tt class="py-op">,</tt><tt class="py-string">'WDistx'</tt><tt class="py-op">,</tt><tt class="py-string">'WDisty'</tt><tt class="py-op">,</tt><tt class="py-string">'Wl'</tt><tt class="py-op">,</tt><tt class="py-string">'P'</tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">            <tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Alpha'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'mr'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Wedge'</tt><tt class="py-op">,</tt><tt class="py-string">'Alpha'</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">            <tt class="py-string">'HRK'</tt><tt class="py-op">,</tt><tt class="py-string">'ARK'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt><tt class="py-string">'Thickness'</tt><tt class="py-op">,</tt><tt class="py-string">'N'</tt><tt class="py-op">,</tt><tt class="py-string">'HRr'</tt><tt class="py-op">,</tt><tt class="py-string">'HRt'</tt><tt class="py-op">,</tt><tt class="py-string">'ARr'</tt><tt class="py-op">,</tt><tt class="py-string">'ARt'</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">            <tt class="py-string">'KeepI'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'th'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Focal'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">            <tt class="py-string">'R'</tt><tt class="py-op">,</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt><tt class="py-string">'KeepI'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'tk'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'K1'</tt><tt class="py-op">,</tt><tt class="py-string">'K2'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-string">'Thickness'</tt><tt class="py-op">,</tt><tt class="py-string">'N'</tt><tt class="py-op">,</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt><tt class="py-string">'KeepI'</tt><tt class="py-op">,</tt><tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'bd'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt><tt class="py-string">'Thickness'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'gh'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt><tt class="py-string">'Theta'</tt><tt class="py-op">,</tt><tt class="py-string">'Phi'</tt><tt class="py-op">,</tt><tt class="py-string">'Diameter'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ref'</tt><tt class="py-op">]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-name">inOrder</tt><tt class="py-op">[</tt><tt class="py-string">'bo'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt> <tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Z'</tt><tt class="py-op">]</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-comment">#parsed from command line</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">    <tt class="py-name">info</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'info'</tt><tt class="py-op">]</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt class="py-name">warning</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'warning'</tt><tt class="py-op">]</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-name">text</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'text'</tt><tt class="py-op">]</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-name">cad</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'cad'</tt><tt class="py-op">]</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-name">fname</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'fname'</tt><tt class="py-op">]</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">    <tt class="py-name">fclib</tt> <tt class="py-op">=</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'fclib'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -148,7 +151,7 @@ expandto(location.href);
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -156,7 +159,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jun 13 14:30:27 2017
+    on Tue Jul 11 10:03:23 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

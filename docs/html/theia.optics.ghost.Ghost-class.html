@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>theia.optics.ghost.Ghost</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="theia-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="theia-module.html">Package&nbsp;theia</a> ::
+        <a href="theia.optics-module.html">Package&nbsp;optics</a> ::
+        <a href="theia.optics.ghost-module.html" onclick="show_private();">Module&nbsp;ghost</a> ::
+        Class&nbsp;Ghost
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="theia.optics.ghost.Ghost-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Ghost</h1><p class="nomargin-top"><span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_theia_op_4" name="uml_class_diagram_for_theia_op_4">
+<area shape="rect" id="node1_10" href="theia.optics.ghost.Ghost-class.html#Name" title="theia.optics.ghost.Ghost.Name" alt="" coords="17,162,577,182"/>
+<area shape="rect" id="node1_11" href="theia.optics.ghost.Ghost-class.html#__abstractmethods__" title="theia.optics.ghost.Ghost.__abstractmethods__" alt="" coords="17,182,577,202"/>
+<area shape="rect" id="node1_12" href="theia.optics.ghost.Ghost-class.html#__init__" title="Ghost initializer." alt="" coords="17,205,577,225"/>
+<area shape="rect" id="node1_13" href="theia.optics.ghost.Ghost-class.html#lines" title="Return the list of lines needed to print the object." alt="" coords="17,225,577,245"/>
+<area shape="rect" id="node1_14" href="theia.optics.ghost.Ghost-class.html#isHit" title="Determine if a beam hits the Ghost surface." alt="" coords="17,245,577,265"/>
+<area shape="rect" id="node1_15" href="theia.optics.ghost.Ghost-class.html#hit" title="Return the beam simply transmitted by the ghost surface." alt="" coords="17,265,577,285"/>
+<area shape="rect" id="node1" href="theia.optics.ghost.Ghost-class.html" title="Ghost class." alt="" coords="5,137,589,291"/>
+<area shape="rect" id="node2_16" href="theia.optics.component.SetupComponent-class.html#SetupCount" title="theia.optics.component.SetupComponent.SetupCount" alt="" coords="191,30,404,50"/>
+<area shape="rect" id="node2_17" href="abc.ABCMeta-class.html" title="Metaclass for defining Abstract Base Classes (ABCs)." alt="" coords="191,50,404,70"/>
+<area shape="rect" id="node2_18" href="theia.optics.component.SetupComponent-class.html#__str__" title="String representation of the component, when calling print(object)." alt="" coords="191,73,404,93"/>
+<area shape="rect" id="node2_19" href="theia.optics.component.SetupComponent-class.html#translate" title="Move the component to (current position + (X, Y, Z))." alt="" coords="191,93,404,113"/>
+<area shape="rect" id="node2" href="theia.optics.component.SetupComponent-class.html" title="SetupComponent class." alt="" coords="179,5,416,119"/>
+</map>
+  <img src="uml_class_diagram_for_theia_op_4.gif" alt='' usemap="#uml_class_diagram_for_theia_op_4" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<pre class="literalblock">
+
+
+Ghost class.
+
+This class represents surfaces which don't interact with the beams. They
+just transmit the same beam, and may be useful to monitor the beams on their
+way, without having to calculate the Q yourself if you're looking for the
+Q at another place than the origin of the beam.
+
+Ghost surfaces basically have a null thickness and transmit the beams.
+
+*=== Attributes ===*
+SetupCount (inherited): class attribute, counts all setup components.
+    [integer]
+Name: class attribute. [string]
+HRCenter (inherited): center of the principal face of the Ghost in space.
+    [3D vector]
+HRnorm (inherited): normal unitary vector the this principal face,
+    supposed to point outside the media. [3D vector]
+Thick (inherited): thickness of the dump, counted in opposite direction to
+    HRNorm. [float]
+Dia (inherited): diameter of the component. [float]
+Ref (inherited): reference string (for keeping track with the lab). [string]
+
+</pre>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
+      <code><a href="abc.ABCMeta-class.html">__metaclass__</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.ghost.Ghost-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">X</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Y</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Z</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Theta</span>=<span class="summary-sig-default">1.57079632679</span>,
+        <span class="summary-sig-arg">Phi</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Ref</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Diameter</span>=<span class="summary-sig-default">0.05</span>)</span><br />
+      Ghost initializer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.ghost.Ghost-class.html#lines" class="summary-sig-name">lines</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return the list of lines needed to print the object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.ghost.Ghost-class.html#isHit" class="summary-sig-name">isHit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">beam</span>)</span><br />
+      Determine if a beam hits the Ghost surface.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.isHit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theia.optics.ghost.Ghost-class.html#hit" class="summary-sig-name">hit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">beam</span>,
+        <span class="summary-sig-arg">order</span>,
+        <span class="summary-sig-arg">threshold</span>)</span><br />
+      Return the beam simply transmitted by the ghost surface.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.hit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
+      <code><a href="theia.optics.component.SetupComponent-class.html#__str__">__str__</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#translate">translate</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Name"></a><span class="summary-name">Name</span> = <code title="'Ghost'"><code class="variable-quote">'</code><code class="variable-string">Ghost</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__abstractmethods__"></a><span class="summary-name">__abstractmethods__</span> = <code title="frozenset([])"><code class="variable-group">frozenset([</code><code class="variable-group">])</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
+      <code><a href="theia.optics.component.SetupComponent-class.html#SetupCount">SetupCount</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b> (private):
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_cache" onclick="show_private();">_abc_cache</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_negative_cache" onclick="show_private();">_abc_negative_cache</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_negative_cache_version" onclick="show_private();">_abc_negative_cache_version</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#_abc_registry" onclick="show_private();">_abc_registry</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">X</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Y</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Z</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Theta</span>=<span class="sig-default">1.57079632679</span>,
+        <span class="sig-arg">Phi</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Ref</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Diameter</span>=<span class="sig-default">0.05</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Ghost initializer.</p>
+  <p>Parameters are the attributes.</p>
+  <p>Returns a Ghost.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="lines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lines</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.lines">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the list of lines needed to print the object.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="theia.optics.component.SetupComponent-class.html#lines">component.SetupComponent.lines</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHit</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">beam</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.isHit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Determine if a beam hits the Ghost surface.
+
+This uses the linePlaneInter function from the geometry module to find
+characteristics of impact of beams on ghost surfaces.
+
+beam: incoming beam. [GaussianBeam]
+
+Returns a dictionary with keys:
+    'isHit': whether the beam hits the dump. [boolean]
+    'intersection point': point in space where it is first hit.
+        [3D vector]
+    'face': to indicate which face is first hit, can be 'HR', 'AR' or
+        'side'. [string]
+    'distance': geometrical distance from beam origin to impact. [float]
+
+</pre>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="theia.optics.component.SetupComponent-class.html#isHit">component.SetupComponent.isHit</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hit</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">beam</span>,
+        <span class="sig-arg">order</span>,
+        <span class="sig-arg">threshold</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.hit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Return the beam simply transmitted by the ghost surface.
+
+beam: incident beam. [GaussianBeam]
+order: maximum strayness of daughter beams, which are not returned if
+    their strayness is over this order. [integer]
+threshold: idem for the power of the daughter beams. [float]
+
+Returns a dictionary of beams with keys:
+    't': Gaussian beam which is the continuity of the incident beam.
+
+</pre>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="theia.optics.component.SetupComponent-class.html#hit">component.SetupComponent.hit</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="theia-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jul 11 10:03:23 2017
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

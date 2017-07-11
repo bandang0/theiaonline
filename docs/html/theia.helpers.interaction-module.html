@@ -34,7 +34,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -95,19 +95,19 @@ Arguments:
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="theia.helpers.interaction-module.html#welcomeString" class="summary-name">welcomeString</a> = <code title="'''
+        <a href="theia.helpers.interaction-module.html#welcome" class="summary-name">welcome</a> = <code title="'''
 \ttheia Copyright (C) 2017 R. Duque
-\tLicense: GNU GPLv3+ &lt;http://gnu.org/licenses.gpl.html&gt;
+\tLicense: GNU GPLv3+ &lt;http://gnu.org/licenses/gpl.html&gt;
 \tThis is free software: you are free to change and redistribute it.
 \tThere is ABSOLUTELY NO WARRANTY, to the extent permitted by law.
-'''"><code class="variable-quote">'</code><code class="variable-string">\n\ttheia Copyright (C) 2017 R. Duque\n\tLice</code><code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\n\ttheia Copyright (C) 2017 R. Duque\n\tLicense: G</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="theia.helpers.interaction-module.html#recursionErrorString" class="summary-name">recursionErrorString</a> = <code title="'''
+        <a href="theia.helpers.interaction-module.html#errorRecursion" class="summary-name">errorRecursion</a> = <code title="'''
 
 It looks like you reached the maximum recursion depth of your Python
 implementation (generally around 1000). The beam tracer builds the bea\
@@ -115,7 +115,37 @@ m tree
 recursively and in your case the recursion went to far. The order and \
 threshold
 simulation parameters were made to prevent this situation. What you ca\
-..."><code class="variable-quote">'</code><code class="variable-string">\n\nIt looks like you reached the maxi</code><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\n\nIt looks like you reached the maximum re</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="theia.helpers.interaction-module.html#errorAtSpecifiedLocation" class="summary-name">errorAtSpecifiedLocation</a> = <code title="'''theia: Error: The FreeCAD library was not found at the specified lo\
+cation %s. Usually it is in /usr/lib/freecad/lib. If you are not sure,\
+ omit the \'-l\', \'--FREECAD-lib\' option and theia will find the lib\
+rary on its own.
+Aborting.'''"><code class="variable-quote">'</code><code class="variable-string">theia: Error: The FreeCAD library </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="theia.helpers.interaction-module.html#errorWhereIs" class="summary-name">errorWhereIs</a> = <code title="'''theia: Error: Unix command \'whereis freecad\' did not yield any di\
+rectory. Please make sure you have FreeCAD installed and that library \
+location is in your $PATH.
+Aborting'''"><code class="variable-quote">'</code><code class="variable-string">theia: Error: Unix command \'whereis freecad\'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="theia.helpers.interaction-module.html#errorUnknown" class="summary-name">errorUnknown</a> = <code title="'''theia: Error: %s was used as the source directory for the FreeCAD l\
+ibrary but an error occured, make sure your FreeCAD build is correct.
+Aborting.'''"><code class="variable-quote">'</code><code class="variable-string">theia: Error: %s was used as the source direct</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
@@ -165,12 +195,12 @@ simulation parameters were made to prevent this situation. What you ca\
   </dl>
 </td></tr></table>
 </div>
-<a name="welcomeString"></a>
+<a name="welcome"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
-  <h3 class="epydoc">welcomeString</h3>
+  <h3 class="epydoc">welcome</h3>
   
   <dl class="fields">
   </dl>
@@ -179,7 +209,7 @@ simulation parameters were made to prevent this situation. What you ca\
       <dd><table><tr><td><pre class="variable">
 <code class="variable-quote">'''</code><code class="variable-string"></code>
 <code class="variable-string">\ttheia Copyright (C) 2017 R. Duque</code>
-<code class="variable-string">\tLicense: GNU GPLv3+ &lt;http://gnu.org/licenses.gpl.html&gt;</code>
+<code class="variable-string">\tLicense: GNU GPLv3+ &lt;http://gnu.org/licenses/gpl.html&gt;</code>
 <code class="variable-string">\tThis is free software: you are free to change and redistribute it.</code>
 <code class="variable-string">\tThere is ABSOLUTELY NO WARRANTY, to the extent permitted by law.</code>
 <code class="variable-string"></code><code class="variable-quote">'''</code>
@@ -188,12 +218,12 @@ simulation parameters were made to prevent this situation. What you ca\
   </dl>
 </td></tr></table>
 </div>
-<a name="recursionErrorString"></a>
+<a name="errorRecursion"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
-  <h3 class="epydoc">recursionErrorString</h3>
+  <h3 class="epydoc">errorRecursion</h3>
   
   <dl class="fields">
   </dl>
@@ -209,6 +239,69 @@ simulation parameters were made to prevent this situation. What you ca\
 <code class="variable-string">threshold</code>
 <code class="variable-string">simulation parameters were made to prevent this situation. What you ca</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 <code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="errorAtSpecifiedLocation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">errorAtSpecifiedLocation</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">theia: Error: The FreeCAD library was not found at the specified lo</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">cation %s. Usually it is in /usr/lib/freecad/lib. If you are not sure,</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string"> omit the \'-l\', \'--FREECAD-lib\' option and theia will find the lib</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">rary on its own.</code>
+<code class="variable-string">Aborting.</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="errorWhereIs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">errorWhereIs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">theia: Error: Unix command \'whereis freecad\' did not yield any di</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">rectory. Please make sure you have FreeCAD installed and that library </code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">location is in your $PATH.</code>
+<code class="variable-string">Aborting</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="errorUnknown"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">errorUnknown</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">theia: Error: %s was used as the source directory for the FreeCAD l</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">ibrary but an error occured, make sure your FreeCAD build is correct.</code>
+<code class="variable-string">Aborting.</code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -239,7 +332,7 @@ simulation parameters were made to prevent this situation. What you ca\
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -247,7 +340,7 @@ simulation parameters were made to prevent this situation. What you ca\
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jun 13 14:30:27 2017
+    on Tue Jul 11 10:03:23 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

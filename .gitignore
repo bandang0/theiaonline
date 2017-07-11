@@ -10,3 +10,6 @@ makefile
 #compiled site
 _site/
 .sass-cache/
+
+#draft stuff
+trash/

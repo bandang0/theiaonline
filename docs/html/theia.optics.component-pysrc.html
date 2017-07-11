@@ -34,7 +34,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -62,98 +62,127 @@
 </table>
 <h1 class="epydoc">Source Code for <a href="theia.optics.component-module.html">Module theia.optics.component</a></h1>
 <pre class="py-src">
-<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">'''Defines the SetupComponent class for theia.'''</tt> </tt>
-<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
-<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"># Provides:</tt> </tt>
-<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment">#   class SetupComponent</tt> </tt>
-<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment">#       __init__</tt> </tt>
-<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment">#       __str__</tt> </tt>
-<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment">#       lines</tt> </tt>
-<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment">#       isHit</tt> </tt>
-<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"> </tt>
-<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
-<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">abc</tt> <tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Class abc.ABCMeta=abc.ABCMeta-class.html"><a title="abc.ABCMeta" class="py-name" href="#" onclick="return doclink('link-0', 'ABCMeta', 'link-0');">ABCMeta</a></tt><tt class="py-op">,</tt> <tt class="py-name">abstractmethod</tt> </tt>
-<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-op">.</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package theia.helpers=theia.helpers-module.html"><a title="theia.helpers" class="py-name" href="#" onclick="return doclink('link-1', 'helpers', 'link-1');">helpers</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module theia.helpers.tools=theia.helpers.tools-module.html"><a title="theia.helpers.tools" class="py-name" href="#" onclick="return doclink('link-2', 'tools', 'link-2');">tools</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Function theia.helpers.tools.formatter()=theia.helpers.tools-module.html#formatter"><a title="theia.helpers.tools.formatter" class="py-name" href="#" onclick="return doclink('link-3', 'formatter', 'link-3');">formatter</a></tt> </tt>
-<a name="SetupComponent"></a><div id="SetupComponent-def"><a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
-<a name="L14"></a><tt class="py-lineno">14</tt> <a class="py-toggle" href="#" id="SetupComponent-toggle" onclick="return toggle('SetupComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html">SetupComponent</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="SetupComponent-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="SetupComponent-expanded"><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
-<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    SetupComponent class.</tt> </tt>
-<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">    This is an Abstract Base Class for all the components (optical or not) of</tt> </tt>
-<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">    the setup. Its methods may be implemented in daughter classes.</tt> </tt>
-<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">    *=== Attributes ===*</tt> </tt>
-<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">    SetupCount: class attribute, counts setup components. [integer]</tt> </tt>
-<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">    HRCenter: center of the principal face of the component in space.</tt> </tt>
-<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-docstring">        [3D vector]</tt> </tt>
-<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    HRnorm: normal unitary vector the this principal face, supposed to point</tt> </tt>
-<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">        outside the media. [3D vector]</tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    Thick: thickness of the component, counted in opposite direction to</tt> </tt>
-<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">        HRNorm. [float]</tt> </tt>
-<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    Dia: diameter of the component. [float]</tt> </tt>
-<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">    Name: name of the component. [string]</tt> </tt>
-<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">    Ref: reference string (for keeping track with the lab). [string]</tt> </tt>
-<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
-<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"> </tt>
-<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt class="py-name">__metaclass__</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="abc.ABCMeta" class="py-name" href="#" onclick="return doclink('link-4', 'ABCMeta', 'link-0');">ABCMeta</a></tt> </tt>
-<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable theia.optics.component.SetupComponent.SetupCount=theia.optics.component.SetupComponent-class.html#SetupCount"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-5', 'SetupCount', 'link-5');">SetupCount</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt>   <tt class="py-comment">#counts the setup components</tt> </tt>
-<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"> </tt>
-<a name="SetupComponent.__init__"></a><div id="SetupComponent.__init__-def"><a name="L40"></a><tt class="py-lineno">40</tt> <a class="py-toggle" href="#" id="SetupComponent.__init__-toggle" onclick="return toggle('SetupComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">HRCenter</tt><tt class="py-op">,</tt> <tt class="py-param">HRNorm</tt><tt class="py-op">,</tt> </tt>
-<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">                <tt class="py-param">Name</tt><tt class="py-op">,</tt> <tt class="py-param">Ref</tt><tt class="py-op">,</tt> <tt class="py-param">Thickness</tt><tt class="py-op">,</tt> <tt class="py-param">Diameter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="SetupComponent.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SetupComponent.__init__-expanded"><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-docstring">'''SetupComponent initializer.</tt> </tt>
-<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters are the attributes of the object to construct.</tt> </tt>
-<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">        Returns a setupComponent.</tt> </tt>
-<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
-<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-comment"># allow empty initializer</tt> </tt>
-<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">Ref</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
-<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">            <tt class="py-name">Ref</tt> <tt class="py-op">=</tt> <tt class="py-string">"Set"</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name" targets="Class theia.optics.component.SetupComponent=theia.optics.component.SetupComponent-class.html"><a title="theia.optics.component.SetupComponent" class="py-name" href="#" onclick="return doclink('link-6', 'SetupComponent', 'link-6');">SetupComponent</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-7', 'SetupCount', 'link-5');">SetupCount</a></tt><tt class="py-op">)</tt> </tt>
-<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt class="py-comment"># initialize data</tt> </tt>
-<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRCenter</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">HRCenter</tt><tt class="py-op">,</tt> <tt class="py-name">dtype</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">float64</tt><tt class="py-op">)</tt> </tt>
-<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRNorm</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">HRNorm</tt><tt class="py-op">,</tt> <tt class="py-name">dtype</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">float64</tt><tt class="py-op">)</tt> </tt>
-<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRNorm</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRNorm</tt><tt class="py-op">/</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">linalg</tt><tt class="py-op">.</tt><tt class="py-name">norm</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRNorm</tt><tt class="py-op">)</tt> </tt>
-<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Thick</tt> <tt class="py-op">=</tt> <tt class="py-name">Thickness</tt> </tt>
-<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Dia</tt> <tt class="py-op">=</tt> <tt class="py-name">Diameter</tt> </tt>
-<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Name</tt> <tt class="py-op">=</tt> <tt class="py-name">Name</tt> </tt>
-<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Ref</tt> <tt class="py-op">=</tt> <tt class="py-name">Ref</tt> </tt>
-<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"> </tt>
-<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt id="link-8" class="py-name"><a title="theia.optics.component.SetupComponent" class="py-name" href="#" onclick="return doclink('link-8', 'SetupComponent', 'link-6');">SetupComponent</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-9', 'SetupCount', 'link-5');">SetupCount</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="theia.optics.component.SetupComponent" class="py-name" href="#" onclick="return doclink('link-10', 'SetupComponent', 'link-6');">SetupComponent</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-11', 'SetupCount', 'link-5');">SetupCount</a></tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
-</div><a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"> </tt>
-<a name="SetupComponent.__str__"></a><div id="SetupComponent.__str__-def"><a name="L63"></a><tt class="py-lineno">63</tt> <a class="py-toggle" href="#" id="SetupComponent.__str__-toggle" onclick="return toggle('SetupComponent.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="SetupComponent.__str__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SetupComponent.__str__-expanded"><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt class="py-docstring">'''String representation of the component, when calling print(object).</tt> </tt>
-<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
-<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-12" class="py-name"><a title="theia.helpers.tools.formatter" class="py-name" href="#" onclick="return doclink('link-12', 'formatter', 'link-3');">formatter</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method theia.optics.beam.GaussianBeam.lines()=theia.optics.beam.GaussianBeam-class.html#lines,Method theia.optics.beamdump.BeamDump.lines()=theia.optics.beamdump.BeamDump-class.html#lines,Method theia.optics.component.SetupComponent.lines()=theia.optics.component.SetupComponent-class.html#lines,Method theia.optics.mirror.Mirror.lines()=theia.optics.mirror.Mirror-class.html#lines,Method theia.optics.thicklens.ThickLens.lines()=theia.optics.thicklens.ThickLens-class.html#lines,Method theia.optics.thinlens.ThinLens.lines()=theia.optics.thinlens.ThinLens-class.html#lines,Method theia.tree.beamtree.BeamTree.lines()=theia.tree.beamtree.BeamTree-class.html#lines"><a title="theia.optics.beam.GaussianBeam.lines
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">'''Defines the SetupComponent class for theia.'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Provides:</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#   class SetupComponent</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#       __init__</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">#       __str__</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#       lines</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#       isHit</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#       hit</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#       translate</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">abc</tt> <tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Class abc.ABCMeta=abc.ABCMeta-class.html"><a title="abc.ABCMeta" class="py-name" href="#" onclick="return doclink('link-0', 'ABCMeta', 'link-0');">ABCMeta</a></tt><tt class="py-op">,</tt> <tt class="py-name">abstractmethod</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-op">.</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package theia.helpers=theia.helpers-module.html"><a title="theia.helpers" class="py-name" href="#" onclick="return doclink('link-1', 'helpers', 'link-1');">helpers</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module theia.helpers.tools=theia.helpers.tools-module.html"><a title="theia.helpers.tools" class="py-name" href="#" onclick="return doclink('link-2', 'tools', 'link-2');">tools</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Function theia.helpers.tools.formatter()=theia.helpers.tools-module.html#formatter"><a title="theia.helpers.tools.formatter" class="py-name" href="#" onclick="return doclink('link-3', 'formatter', 'link-3');">formatter</a></tt> </tt>
+<a name="SetupComponent"></a><div id="SetupComponent-def"><a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="SetupComponent-toggle" onclick="return toggle('SetupComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html">SetupComponent</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SetupComponent-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">    SetupComponent class.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    This is an Abstract Base Class for all the components (optical or not) of</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    the setup. Its methods may be implemented in daughter classes.</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    *=== Attributes ===*</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    SetupCount: class attribute, counts setup components. [integer]</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    HRCenter: center of the principal face of the component in space.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        [3D vector]</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    HRNorm: normal unitary vector the this principal face, supposed to point</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">        outside the media. [3D vector]</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    Thick: thickness of the component, counted in opposite direction to</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        HRNorm. [float]</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    Dia: diameter of the component. [float]</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    Name: name of the component. [string]</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    Ref: reference string (for keeping track with the lab). [string]</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-name">__metaclass__</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="abc.ABCMeta" class="py-name" href="#" onclick="return doclink('link-4', 'ABCMeta', 'link-0');">ABCMeta</a></tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable theia.optics.component.SetupComponent.SetupCount=theia.optics.component.SetupComponent-class.html#SetupCount"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-5', 'SetupCount', 'link-5');">SetupCount</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt>   <tt class="py-comment">#counts the setup components</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Variable theia.optics.beam.GaussianBeam.Name=theia.optics.beam.GaussianBeam-class.html#Name,Variable theia.optics.beamdump.BeamDump.Name=theia.optics.beamdump.BeamDump-class.html#Name,Variable theia.optics.component.SetupComponent.Name=theia.optics.component.SetupComponent-class.html#Name,Variable theia.optics.ghost.Ghost.Name=theia.optics.ghost.Ghost-class.html#Name,Variable theia.optics.mirror.Mirror.Name=theia.optics.mirror.Mirror-class.html#Name,Variable theia.optics.optic.Optic.Name=theia.optics.optic.Optic-class.html#Name,Variable theia.optics.thicklens.ThickLens.Name=theia.optics.thicklens.ThickLens-class.html#Name,Variable theia.optics.thinlens.ThinLens.Name=theia.optics.thinlens.ThinLens-class.html#Name,Variable theia.tree.beamtree.BeamTree.Name=theia.tree.beamtree.BeamTree-class.html#Name"><a title="theia.optics.beam.GaussianBeam.Name
+theia.optics.beamdump.BeamDump.Name
+theia.optics.component.SetupComponent.Name
+theia.optics.ghost.Ghost.Name
+theia.optics.mirror.Mirror.Name
+theia.optics.optic.Optic.Name
+theia.optics.thicklens.ThickLens.Name
+theia.optics.thinlens.ThinLens.Name
+theia.tree.beamtree.BeamTree.Name" class="py-name" href="#" onclick="return doclink('link-6', 'Name', 'link-6');">Name</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"SetupComponent"</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="SetupComponent.__init__"></a><div id="SetupComponent.__init__-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="SetupComponent.__init__-toggle" onclick="return toggle('SetupComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">HRCenter</tt><tt class="py-op">,</tt> <tt class="py-param">HRNorm</tt><tt class="py-op">,</tt> <tt class="py-param">Ref</tt><tt class="py-op">,</tt> <tt class="py-param">Thickness</tt><tt class="py-op">,</tt> <tt class="py-param">Diameter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SetupComponent.__init__-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-docstring">'''SetupComponent initializer.</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters are the attributes of the object to construct.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        Returns a setupComponent.</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-comment"># allow empty initializer</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">Ref</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-name">Ref</tt> <tt class="py-op">=</tt> <tt class="py-string">"Set"</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-7" class="py-name" targets="Class theia.optics.component.SetupComponent=theia.optics.component.SetupComponent-class.html"><a title="theia.optics.component.SetupComponent" class="py-name" href="#" onclick="return doclink('link-7', 'SetupComponent', 'link-7');">SetupComponent</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-8', 'SetupCount', 'link-5');">SetupCount</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-comment"># initialize data</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRCenter</tt> <tt class="py-op">=</tt> <tt class="py-name">HRCenter</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRNorm</tt> <tt class="py-op">=</tt> <tt class="py-name">HRNorm</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Thick</tt> <tt class="py-op">=</tt> <tt class="py-name">Thickness</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Dia</tt> <tt class="py-op">=</tt> <tt class="py-name">Diameter</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Ref</tt> <tt class="py-op">=</tt> <tt class="py-name">Ref</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt id="link-9" class="py-name"><a title="theia.optics.component.SetupComponent" class="py-name" href="#" onclick="return doclink('link-9', 'SetupComponent', 'link-7');">SetupComponent</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-10', 'SetupCount', 'link-5');">SetupCount</a></tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="theia.optics.component.SetupComponent" class="py-name" href="#" onclick="return doclink('link-11', 'SetupComponent', 'link-7');">SetupComponent</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="theia.optics.component.SetupComponent.SetupCount" class="py-name" href="#" onclick="return doclink('link-12', 'SetupCount', 'link-5');">SetupCount</a></tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="SetupComponent.__str__"></a><div id="SetupComponent.__str__-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="SetupComponent.__str__-toggle" onclick="return toggle('SetupComponent.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SetupComponent.__str__-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-docstring">'''String representation of the component, when calling print(object).</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-13" class="py-name"><a title="theia.helpers.tools.formatter" class="py-name" href="#" onclick="return doclink('link-13', 'formatter', 'link-3');">formatter</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method theia.optics.beam.GaussianBeam.lines()=theia.optics.beam.GaussianBeam-class.html#lines,Method theia.optics.beamdump.BeamDump.lines()=theia.optics.beamdump.BeamDump-class.html#lines,Method theia.optics.component.SetupComponent.lines()=theia.optics.component.SetupComponent-class.html#lines,Method theia.optics.ghost.Ghost.lines()=theia.optics.ghost.Ghost-class.html#lines,Method theia.optics.mirror.Mirror.lines()=theia.optics.mirror.Mirror-class.html#lines,Method theia.optics.thicklens.ThickLens.lines()=theia.optics.thicklens.ThickLens-class.html#lines,Method theia.optics.thinlens.ThinLens.lines()=theia.optics.thinlens.ThinLens-class.html#lines,Method theia.tree.beamtree.BeamTree.lines()=theia.tree.beamtree.BeamTree-class.html#lines"><a title="theia.optics.beam.GaussianBeam.lines
 theia.optics.beamdump.BeamDump.lines
 theia.optics.component.SetupComponent.lines
+theia.optics.ghost.Ghost.lines
 theia.optics.mirror.Mirror.lines
 theia.optics.thicklens.ThickLens.lines
 theia.optics.thinlens.ThinLens.lines
-theia.tree.beamtree.BeamTree.lines" class="py-name" href="#" onclick="return doclink('link-13', 'lines', 'link-13');">lines</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt>
-<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
-<a name="SetupComponent.lines"></a><div id="SetupComponent.lines-def"><a name="L70"></a><tt class="py-lineno">70</tt> <a class="py-toggle" href="#" id="SetupComponent.lines-toggle" onclick="return toggle('SetupComponent.lines');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#lines">lines</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="SetupComponent.lines-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SetupComponent.lines-expanded"><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">        <tt class="py-docstring">'''Method to return the list of strings to __str__.</tt> </tt>
-<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"><tt class="py-docstring">        Abstract (pure virtual) method.</tt> </tt>
-<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
-<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
-</div><a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"> </tt>
-<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
-<a name="SetupComponent.isHit"></a><div id="SetupComponent.isHit-def"><a name="L79"></a><tt class="py-lineno">79</tt> <a class="py-toggle" href="#" id="SetupComponent.isHit-toggle" onclick="return toggle('SetupComponent.isHit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#isHit">isHit</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">beam</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="SetupComponent.isHit-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SetupComponent.isHit-expanded"><a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-docstring">'''Method to determine if component is hit by a beam.</tt> </tt>
-<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line"><tt class="py-docstring">        Abstract (pure virtual) method.</tt> </tt>
-<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
-<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
-</div></div><a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+theia.tree.beamtree.BeamTree.lines" class="py-name" href="#" onclick="return doclink('link-14', 'lines', 'link-14');">lines</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="SetupComponent.lines"></a><div id="SetupComponent.lines-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="SetupComponent.lines-toggle" onclick="return toggle('SetupComponent.lines');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#lines">lines</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent.lines-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SetupComponent.lines-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-docstring">'''Method to return the list of strings to __str__.</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        Abstract (pure virtual) method.</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="SetupComponent.isHit"></a><div id="SetupComponent.isHit-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="SetupComponent.isHit-toggle" onclick="return toggle('SetupComponent.isHit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#isHit">isHit</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">beam</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent.isHit-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SetupComponent.isHit-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-docstring">'''Method to determine if component is hit by a beam.</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">        Abstract (pure virtual) method.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="SetupComponent.hit"></a><div id="SetupComponent.hit-def"><a name="L88"></a><tt class="py-lineno"> 88</tt> <a class="py-toggle" href="#" id="SetupComponent.hit-toggle" onclick="return toggle('SetupComponent.hit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#hit">hit</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">beam</tt><tt class="py-op">,</tt> <tt class="py-param">order</tt><tt class="py-op">,</tt> <tt class="py-param">threshold</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent.hit-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SetupComponent.hit-expanded"><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-docstring">'''Compute the refracted and reflected beams after interaction.</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        Abstract (pure virtual) method.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+</div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="SetupComponent.translate"></a><div id="SetupComponent.translate-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="SetupComponent.translate-toggle" onclick="return toggle('SetupComponent.translate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.optics.component.SetupComponent-class.html#translate">translate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">X</tt> <tt class="py-op">=</tt> <tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-param">Y</tt> <tt class="py-op">=</tt> <tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-param">Z</tt> <tt class="py-op">=</tt> <tt class="py-number">0.</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetupComponent.translate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SetupComponent.translate-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-docstring">'''Move the component to (current position + (X, Y, Z)).</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        This version only takes care of the HRCenter, version of sub classes</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        take care of ARCenter if relevant.</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        X, Y, Z: components of the translation vector.</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        No return value.</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRCenter</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">HRCenter</tt> <tt class="py-op">+</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">X</tt><tt class="py-op">,</tt> <tt class="py-name">Y</tt><tt class="py-op">,</tt> <tt class="py-name">Z</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">dtype</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">float64</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -184,7 +213,7 @@ expandto(location.href);
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -192,7 +221,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jun 13 14:30:27 2017
+    on Tue Jul 11 10:03:23 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

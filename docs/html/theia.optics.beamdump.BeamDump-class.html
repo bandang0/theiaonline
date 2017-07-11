@@ -34,7 +34,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -65,16 +65,18 @@
 <h1 class="epydoc">Class BeamDump</h1><p class="nomargin-top"><span class="codelink"><a href="theia.optics.beamdump-pysrc.html#BeamDump">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_theia_op_2" name="uml_class_diagram_for_theia_op_2">
-<area shape="rect" id="node1_8" href="theia.optics.beamdump.BeamDump-class.html#__abstractmethods__" title="theia.optics.beamdump.BeamDump.__abstractmethods__" alt="" coords="17,141,804,161"/>
-<area shape="rect" id="node1_9" href="theia.optics.beamdump.BeamDump-class.html#__init__" title="BeamDump initializer." alt="" coords="17,164,804,184"/>
-<area shape="rect" id="node1_10" href="theia.optics.beamdump.BeamDump-class.html#lines" title="Return the list of lines needed to print the object." alt="" coords="17,184,804,204"/>
-<area shape="rect" id="node1_11" href="theia.optics.beamdump.BeamDump-class.html#isHit" title="Determine if a beam hits the BeamDump." alt="" coords="17,204,804,224"/>
-<area shape="rect" id="node1_12" href="theia.optics.beamdump.BeamDump-class.html#hit" title="Compute the refracted and reflected beams after interaction." alt="" coords="17,224,804,244"/>
-<area shape="rect" id="node1" href="theia.optics.beamdump.BeamDump-class.html" title="BeamDump class." alt="" coords="5,117,816,251"/>
-<area shape="rect" id="node2_13" href="theia.optics.component.SetupComponent-class.html#SetupCount" title="theia.optics.component.SetupComponent.SetupCount" alt="" coords="325,29,495,49"/>
-<area shape="rect" id="node2_14" href="abc.ABCMeta-class.html" title="Metaclass for defining Abstract Base Classes (ABCs)." alt="" coords="325,49,495,69"/>
-<area shape="rect" id="node2_15" href="theia.optics.component.SetupComponent-class.html#__str__" title="String representation of the component, when calling print(object)." alt="" coords="325,72,495,92"/>
-<area shape="rect" id="node2" href="theia.optics.component.SetupComponent-class.html" title="SetupComponent class." alt="" coords="313,5,506,99"/>
+<area shape="rect" id="node1_10" href="theia.optics.beamdump.BeamDump-class.html#Name" title="theia.optics.beamdump.BeamDump.Name" alt="" coords="17,162,679,182"/>
+<area shape="rect" id="node1_11" href="theia.optics.beamdump.BeamDump-class.html#__abstractmethods__" title="theia.optics.beamdump.BeamDump.__abstractmethods__" alt="" coords="17,182,679,202"/>
+<area shape="rect" id="node1_12" href="theia.optics.beamdump.BeamDump-class.html#__init__" title="BeamDump initializer." alt="" coords="17,205,679,225"/>
+<area shape="rect" id="node1_13" href="theia.optics.beamdump.BeamDump-class.html#lines" title="Return the list of lines needed to print the object." alt="" coords="17,225,679,245"/>
+<area shape="rect" id="node1_14" href="theia.optics.beamdump.BeamDump-class.html#isHit" title="Determine if a beam hits the BeamDump." alt="" coords="17,245,679,265"/>
+<area shape="rect" id="node1_15" href="theia.optics.beamdump.BeamDump-class.html#hit" title="Compute the refracted and reflected beams after interaction." alt="" coords="17,265,679,285"/>
+<area shape="rect" id="node1" href="theia.optics.beamdump.BeamDump-class.html" title="BeamDump class." alt="" coords="5,137,691,291"/>
+<area shape="rect" id="node2_16" href="theia.optics.component.SetupComponent-class.html#SetupCount" title="theia.optics.component.SetupComponent.SetupCount" alt="" coords="241,30,455,50"/>
+<area shape="rect" id="node2_17" href="abc.ABCMeta-class.html" title="Metaclass for defining Abstract Base Classes (ABCs)." alt="" coords="241,50,455,70"/>
+<area shape="rect" id="node2_18" href="theia.optics.component.SetupComponent-class.html#__str__" title="String representation of the component, when calling print(object)." alt="" coords="241,73,455,93"/>
+<area shape="rect" id="node2_19" href="theia.optics.component.SetupComponent-class.html#translate" title="Move the component to (current position + (X, Y, Z))." alt="" coords="241,93,455,113"/>
+<area shape="rect" id="node2" href="theia.optics.component.SetupComponent-class.html" title="SetupComponent class." alt="" coords="229,5,467,119"/>
 </map>
   <img src="uml_class_diagram_for_theia_op_2.gif" alt='' usemap="#uml_class_diagram_for_theia_op_2" ismap="ismap" class="graph-without-title" />
 </center>
@@ -92,6 +94,7 @@ for example.
 *=== Attributes ===*
 SetupCount (inherited): class attribute, counts all setup components.
     [integer]
+Name: class attribute. [string]
 HRCenter (inherited): center of the principal face of the BeamDump in space.
     [3D vector]
 HRnorm (inherited): normal unitary vector the this principal face,
@@ -99,7 +102,6 @@ HRnorm (inherited): normal unitary vector the this principal face,
 Thick (inherited): thickness of the dump, counted in opposite direction to
     HRNorm. [float]
 Dia (inherited): diameter of the component. [float]
-Name (inherited): name of the component. [string]
 Ref (inherited): reference string (for keeping track with the lab). [string]
 
 </pre>
@@ -158,7 +160,6 @@ Ref (inherited): reference string (for keeping track with the lab). [string]
         <span class="summary-sig-arg">Z</span>=<span class="summary-sig-default">0.0</span>,
         <span class="summary-sig-arg">Theta</span>=<span class="summary-sig-default">1.57079632679</span>,
         <span class="summary-sig-arg">Phi</span>=<span class="summary-sig-default">0.0</span>,
-        <span class="summary-sig-arg">Name</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">BeamDump</code><code class="variable-quote">'</code></span>,
         <span class="summary-sig-arg">Ref</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">Thickness</span>=<span class="summary-sig-default">0.02</span>,
         <span class="summary-sig-arg">Diameter</span>=<span class="summary-sig-default">0.05</span>)</span><br />
@@ -230,7 +231,8 @@ Ref (inherited): reference string (for keeping track with the lab). [string]
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="theia.optics.component.SetupComponent-class.html">component.SetupComponent</a></code></b>:
-      <code><a href="theia.optics.component.SetupComponent-class.html#__str__">__str__</a></code>
+      <code><a href="theia.optics.component.SetupComponent-class.html#__str__">__str__</a></code>,
+      <code><a href="theia.optics.component.SetupComponent-class.html#translate">translate</a></code>
       </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
       <code>__delattr__</code>,
@@ -265,6 +267,13 @@ Ref (inherited): reference string (for keeping track with the lab). [string]
     </table>
   </td>
 </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Name"></a><span class="summary-name">Name</span> = <code title="'BeamDump'"><code class="variable-quote">'</code><code class="variable-string">BeamDump</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -342,7 +351,6 @@ Ref (inherited): reference string (for keeping track with the lab). [string]
         <span class="sig-arg">Z</span>=<span class="sig-default">0.0</span>,
         <span class="sig-arg">Theta</span>=<span class="sig-default">1.57079632679</span>,
         <span class="sig-arg">Phi</span>=<span class="sig-default">0.0</span>,
-        <span class="sig-arg">Name</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">BeamDump</code><code class="variable-quote">'</code></span>,
         <span class="sig-arg">Ref</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">Thickness</span>=<span class="sig-default">0.02</span>,
         <span class="sig-arg">Diameter</span>=<span class="sig-default">0.05</span>)</span>
@@ -457,6 +465,9 @@ Returns a dictionary of beams with keys:
 
 </pre>
   <dl class="fields">
+    <dt>Overrides:
+        <a href="theia.optics.component.SetupComponent-class.html#hit">component.SetupComponent.hit</a>
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -485,7 +496,7 @@ Returns a dictionary of beams with keys:
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://93.71.63.5:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -493,7 +504,7 @@ Returns a dictionary of beams with keys:
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jun 13 14:30:27 2017
+    on Tue Jul 11 10:03:23 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

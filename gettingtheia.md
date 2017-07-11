@@ -5,13 +5,14 @@ permalink: /releases/
 ---
 
 ### Releases
-Download all the theia releases with the following links:
+You can find all the `theia` releases in compressed format here:
 
 * [theia-0.1.0alpha](theia-0.1.0alpha.tar.gz)
 * [theia-0.1.0](theia-0.1.0.tar.gz)
+* [theia-0.1.1](theia-0.1.1.tar.gz)
 
 ### Sitting on the edge
-Prefer getting the latest from theia? Download the live version from the git repository with to following command (caution: the live git version may be broken and not fit for your purposes):
+Prefer getting the latest from the Theia Project? Download the live version of the git repository with the following command (caution: the live git version may be broken and not fit for your purposes):
 
 `git clone git://theia.hopto.org:/home/git/theia.git`
 
