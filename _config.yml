@@ -29,6 +29,5 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - makefile
   - vendor
   - trash
