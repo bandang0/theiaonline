@@ -200,7 +200,7 @@ In the case of a 1 mm input beam, the results are given by the following graphs.
 
 You may run into some errors while scripting with `theia`. The most common errors encountered are:
 
-* `KeyError: [some key of the init method]`: You have not initialized all the global variables (use the snippet from step 2, of this tutorial, it always works.)
+* `KeyError: [some key of the init method]`: You have not initialized all the global variables (use the snippet from step 2 of this tutorial, it always works).
 * `AttributeError: 'NoneType' object has no attribute 'T' [or 'R']`: One tree has no daughter (`NoneType`) and you are accessing the daughter tree (`T` or `R`) of that non-existing tree. Make sure you have correctly input the optics and that all the beams you expected were traced. You can find out how many beams where traced using the `numberOfBeams` method of the BeamTree class. For example:
 
 ```python
