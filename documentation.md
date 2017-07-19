@@ -22,7 +22,8 @@ If you would like to read on the Theia Project itself, you will find the project
 
 Some more documentation is:
 
-* [theia Primer](primer.pdf): A quick presentation of theia in the course of development.
+* [Talk at the Virgo Week in July 2017](theiaforvirgo.pdf): Presentation of the Theia Project at the Virgo Week in 2017.
+* [theia Primer](primer.pdf): A quick presentation of `theia` in the course of development.
 * [theia Status Update](statusupdate.pdf): A small presentation relating the state of the project right before v0.1.1.
 
 ### Former documentation
