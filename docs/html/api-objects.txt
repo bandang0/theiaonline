@@ -10,6 +10,13 @@ theia.helpers.__credits__	theia.helpers-module.html#__credits__
 theia.helpers.__maintainer__	theia.helpers-module.html#__maintainer__
 theia.helpers.__email__	theia.helpers-module.html#__email__
 theia.helpers.__package__	theia.helpers-module.html#__package__
+theia.helpers.core	theia.helpers.core-module.html
+theia.helpers.core.gbeamInit	theia.helpers.core-module.html#gbeamInit
+theia.helpers.core.hang	theia.helpers.core-module.html#hang
+theia.helpers.core.pendu	theia.helpers.core-module.html#pendu
+theia.helpers.core.pong	theia.helpers.core-module.html#pong
+theia.helpers.core.__package__	theia.helpers.core-module.html#__package__
+theia.helpers.core.magazzu	theia.helpers.core-module.html#magazzu
 theia.helpers.geometry	theia.helpers.geometry-module.html
 theia.helpers.geometry.lineCylInter	theia.helpers.geometry-module.html#lineCylInter
 theia.helpers.geometry.newDir	theia.helpers.geometry-module.html#newDir
@@ -22,12 +29,13 @@ theia.helpers.geometry.linePlaneInter	theia.helpers.geometry-module.html#linePla
 theia.helpers.geometry.rectToSph	theia.helpers.geometry-module.html#rectToSph
 theia.helpers.interaction	theia.helpers.interaction-module.html
 theia.helpers.interaction.errorWhereIs	theia.helpers.interaction-module.html#errorWhereIs
+theia.helpers.interaction.usage	theia.helpers.interaction-module.html#usage
 theia.helpers.interaction.errorRecursion	theia.helpers.interaction-module.html#errorRecursion
 theia.helpers.interaction.welcome	theia.helpers.interaction-module.html#welcome
 theia.helpers.interaction.__package__	theia.helpers.interaction-module.html#__package__
 theia.helpers.interaction.errorAtSpecifiedLocation	theia.helpers.interaction-module.html#errorAtSpecifiedLocation
 theia.helpers.interaction.errorUnknown	theia.helpers.interaction-module.html#errorUnknown
-theia.helpers.interaction.usage	theia.helpers.interaction-module.html#usage
+theia.helpers.interaction.lhelp	theia.helpers.interaction-module.html#lhelp
 theia.helpers.settings	theia.helpers.settings-module.html
 theia.helpers.settings.init	theia.helpers.settings-module.html#init
 theia.helpers.settings.__package__	theia.helpers.settings-module.html#__package__
@@ -167,6 +175,7 @@ theia.tree.beamtree.treeOfBeam	theia.tree.beamtree-module.html#treeOfBeam
 theia.tree.beamtree.rectToSph	theia.helpers.geometry-module.html#rectToSph
 theia.tree.beamtree.__package__	theia.tree.beamtree-module.html#__package__
 theia.tree.beamtree.formatter	theia.helpers.tools-module.html#formatter
+theia.tree.beamtree.linePlaneInter	theia.helpers.geometry-module.html#linePlaneInter
 abc.ABCMeta	abc.ABCMeta-class.html
 abc.ABCMeta.__new__	abc.ABCMeta-class.html#__new__
 abc.ABCMeta._abc_invalidation_counter	abc.ABCMeta-class.html#_abc_invalidation_counter

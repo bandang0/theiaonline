@@ -129,26 +129,25 @@
 <a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-name">func</tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kw</tt><tt class="py-op">)</tt> </tt>
 <a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt class="py-name">t2</tt> <tt class="py-op">=</tt> <tt class="py-name">tm</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
 <a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-name">dt</tt> <tt class="py-op">=</tt> <tt class="py-name">t2</tt> <tt class="py-op">-</tt><tt class="py-name">t1</tt> </tt>
-<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-name">st</tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Debug: "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">func</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" exec with '"</tt> \ </tt>
-<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"' in "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">dt</tt><tt class="py-op">*</tt><tt class="py-number">1000.</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"ms."</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-name">st</tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Debug: %s exec with '%s' in %s ms."</tt> \ </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">                <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">func</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">dt</tt><tt class="py-op">*</tt><tt class="py-number">1000.</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-name">st</tt> </tt>
 </div><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
 <a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">wrapped</tt> </tt>
 </div><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
 <a name="formatter"></a><div id="formatter-def"><a name="L74"></a><tt class="py-lineno">74</tt> <a class="py-toggle" href="#" id="formatter-toggle" onclick="return toggle('formatter');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.helpers.tools-module.html#formatter">formatter</a><tt class="py-op">(</tt><tt class="py-param">stringList</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="formatter-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="formatter-expanded"><a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">    <tt class="py-docstring">'''Returns a formatted version of the text formed by the list of lines.</tt> </tt>
-<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
-<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">    <tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt>   <tt class="py-comment"># counts '{' and '}'</tt> </tt>
-<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">    <tt class="py-name">ans</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
-<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">stringList</tt><tt class="py-op">:</tt> </tt>
-<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'}'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">line</tt><tt class="py-op">:</tt> </tt>
-<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">            <tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-name">count</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt> </tt>
-<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">        <tt class="py-name">ans</tt> <tt class="py-op">=</tt> <tt class="py-name">ans</tt> <tt class="py-op">+</tt> <tt class="py-name">count</tt> <tt class="py-op">*</tt> <tt class="py-string">'\t'</tt> <tt class="py-op">+</tt> <tt class="py-name">line</tt> <tt class="py-op">+</tt> <tt class="py-string">'\n'</tt> </tt>
-<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'{'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">line</tt><tt class="py-op">:</tt> </tt>
-<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">            <tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-name">count</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
-<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line"> </tt>
-<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">ans</tt> </tt>
-</div><a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+</div><div id="formatter-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="formatter-expanded"><a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">    <tt class="py-docstring">'''Returns a formatted version of the text formed by the list of lines.'''</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">    <tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt>   <tt class="py-comment"># counts '{' and '}'</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">    <tt class="py-name">ans</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">stringList</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'}'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">line</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">            <tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-name">count</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">        <tt class="py-name">ans</tt> <tt class="py-op">=</tt> <tt class="py-name">ans</tt> <tt class="py-op">+</tt> <tt class="py-name">count</tt> <tt class="py-op">*</tt> <tt class="py-string">'\t'</tt> <tt class="py-op">+</tt> <tt class="py-name">line</tt> <tt class="py-op">+</tt> <tt class="py-string">'\n'</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'{'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">line</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">            <tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-name">count</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">ans</tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -187,7 +186,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jul 11 10:03:23 2017
+    on Mon Jul 24 12:23:09 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

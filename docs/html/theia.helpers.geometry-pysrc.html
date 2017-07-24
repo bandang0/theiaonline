@@ -394,7 +394,7 @@ theia.running.parser.pi" class="py-name" href="#" onclick="return doclink('link-
 <a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
 <a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"><tt class="py-docstring">    a,b: unit 3D vectors. [3D np.arrays]</tt> </tt>
 <a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
-<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"><tt class="py-docstring">    Returns an np.array such that np.matmul(M,a) == b.</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"><tt class="py-docstring">    Returns an np.array such that np.dot(M,a) == b.</tt> </tt>
 <a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
 <a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
 <a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line"> </tt>
@@ -407,7 +407,7 @@ theia.running.parser.pi" class="py-name" href="#" onclick="return doclink('link-
 <a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">                    <tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">float64</tt><tt class="py-op">)</tt> </tt>
 <a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line"> </tt>
 <a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-number">1.</tt><tt class="py-op">,</tt> <tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-number">0.</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-number">1.</tt><tt class="py-op">,</tt> <tt class="py-number">0.</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-number">1.</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">float64</tt><tt class="py-op">)</tt>\ </tt>
-<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line">            <tt class="py-op">+</tt> <tt class="py-name">vx</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">1.0</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">1.0</tt> <tt class="py-op">+</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">dot</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">,</tt><tt class="py-name">b</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">matmul</tt><tt class="py-op">(</tt><tt class="py-name">vx</tt><tt class="py-op">,</tt><tt class="py-name">vx</tt><tt class="py-op">)</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line">            <tt class="py-op">+</tt> <tt class="py-name">vx</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">1.0</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">1.0</tt> <tt class="py-op">+</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">dot</tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">,</tt><tt class="py-name">b</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">dot</tt><tt class="py-op">(</tt><tt class="py-name">vx</tt><tt class="py-op">,</tt><tt class="py-name">vx</tt><tt class="py-op">)</tt> </tt>
 </div><a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line"> </tt>
 <a name="basis"></a><div id="basis-def"><a name="L346"></a><tt class="py-lineno">346</tt> <a class="py-toggle" href="#" id="basis-toggle" onclick="return toggle('basis');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="theia.helpers.geometry-module.html#basis">basis</a><tt class="py-op">(</tt><tt class="py-param">a</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="basis-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="basis-expanded"><a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line">    <tt class="py-docstring">'''Returns two vectors u and v such that (a, u, v) is a direct ON basis.</tt> </tt>
@@ -481,7 +481,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jul 11 10:03:23 2017
+    on Mon Jul 24 12:23:09 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

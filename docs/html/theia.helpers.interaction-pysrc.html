@@ -66,51 +66,57 @@
 <a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
 <a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"># Provides:</tt> </tt>
 <a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment">#       usage</tt> </tt>
-<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment">#       welcome</tt> </tt>
-<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment">#       errorRecursion</tt> </tt>
-<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment">#       errorAtSpecifiedLocation</tt> </tt>
-<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment">#       errorWhereIs</tt> </tt>
-<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-comment">#       errorUnknown</tt> </tt>
-<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
-<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable theia.helpers.interaction.usage=theia.helpers.interaction-module.html#usage"><a title="theia.helpers.interaction.usage" class="py-name" href="#" onclick="return doclink('link-0', 'usage', 'link-0');">usage</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Usage: theia [options] FNAME\n\nArguments:\n"</tt>\ </tt>
-<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"  FNAME\t\t .tia format input file name."</tt> </tt>
-<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
-<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable theia.helpers.interaction.welcome=theia.helpers.interaction-module.html#welcome"><a title="theia.helpers.interaction.welcome" class="py-name" href="#" onclick="return doclink('link-1', 'welcome', 'link-1');">welcome</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'''</tt> </tt>
-<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-string">\ttheia Copyright (C) 2017 R. Duque</tt> </tt>
-<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-string">\tLicense: GNU GPLv3+ &lt;http://gnu.org/licenses/gpl.html&gt;</tt> </tt>
-<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-string">\tThis is free software: you are free to change and redistribute it.</tt> </tt>
-<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-string">\tThere is ABSOLUTELY NO WARRANTY, to the extent permitted by law.</tt> </tt>
-<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-string">'''</tt> </tt>
-<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
-<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable theia.helpers.interaction.errorRecursion=theia.helpers.interaction-module.html#errorRecursion"><a title="theia.helpers.interaction.errorRecursion" class="py-name" href="#" onclick="return doclink('link-2', 'errorRecursion', 'link-2');">errorRecursion</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'''</tt> </tt>
-<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
-<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-string">It looks like you reached the maximum recursion depth of your Python</tt> </tt>
-<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-string">implementation (generally around 1000). The beam tracer builds the beam tree</tt> </tt>
-<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-string">recursively and in your case the recursion went to far. The order and threshold</tt> </tt>
-<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-string">simulation parameters were made to prevent this situation. What you can do:</tt> </tt>
-<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-string">\t1. Make sure you're running with reasonable order and threshold parameters;</tt> </tt>
-<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-string">\t2. Increase the maximum recursion depth of your Python environment by placing</tt> </tt>
-<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-string">\t   `sys.setrecursionlimit([whatever you need])`</tt> </tt>
-<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-string">\t   right under the `"if __name__ == '__main__'` line in bin/theia, rebuild</tt> </tt>
-<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-string">\t   theia with `make build-theia` in the project root and rerun your simulation;</tt> </tt>
-<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-string">\t3. Contact your local administrator to increase the maximum recursion depth</tt> </tt>
-<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-string">\t   on a system-wide basis and rerun your simulation.</tt> </tt>
-<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-string">'''</tt> </tt>
-<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"> </tt>
-<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable theia.helpers.interaction.errorAtSpecifiedLocation=theia.helpers.interaction-module.html#errorAtSpecifiedLocation"><a title="theia.helpers.interaction.errorAtSpecifiedLocation" class="py-name" href="#" onclick="return doclink('link-3', 'errorAtSpecifiedLocation', 'link-3');">errorAtSpecifiedLocation</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Error: The FreeCAD library was not found "</tt>\ </tt>
-<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"at the specified location %s. Usually it is in /usr/lib/freecad/lib. "</tt>\ </tt>
-<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"If you are not sure, omit the '-l', '--FREECAD-lib' option and theia "</tt>\ </tt>
-<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"will find the library on its own.\nAborting."</tt> </tt>
-<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
-<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable theia.helpers.interaction.errorWhereIs=theia.helpers.interaction-module.html#errorWhereIs"><a title="theia.helpers.interaction.errorWhereIs" class="py-name" href="#" onclick="return doclink('link-4', 'errorWhereIs', 'link-4');">errorWhereIs</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Error: Unix command 'whereis freecad' did not yield "</tt>\ </tt>
-<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"any directory. Please make sure you have FreeCAD installed and that "</tt>\ </tt>
-<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"library location is in your $PATH.\nAborting"</tt> </tt>
-<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"> </tt>
-<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt id="link-5" class="py-name" targets="Variable theia.helpers.interaction.errorUnknown=theia.helpers.interaction-module.html#errorUnknown"><a title="theia.helpers.interaction.errorUnknown" class="py-name" href="#" onclick="return doclink('link-5', 'errorUnknown', 'link-5');">errorUnknown</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Error: %s was used as the source directory for the "</tt>\ </tt>
-<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"FreeCAD library but an error occured, make sure your FreeCAD build is "</tt>\ </tt>
-<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"correct.\nAborting."</tt> </tt>
-<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment">#       lhelp</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment">#       welcome</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment">#       errorRecursion</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment">#       errorAtSpecifiedLocation</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-comment">#       errorWhereIs</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-comment">#       errorUnknown</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable theia.helpers.interaction.usage=theia.helpers.interaction-module.html#usage"><a title="theia.helpers.interaction.usage" class="py-name" href="#" onclick="return doclink('link-0', 'usage', 'link-0');">usage</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Usage: theia [options] FNAME\n\nArguments:\n"</tt>\ </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"  FNAME\t\t .tia format input file name."</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable theia.helpers.interaction.lhelp=theia.helpers.interaction-module.html#lhelp"><a title="theia.helpers.interaction.lhelp" class="py-name" href="#" onclick="return doclink('link-1', 'lhelp', 'link-1');">lhelp</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"specify the FreeCAD library location. If none is specified, theia "</tt>\ </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-string">"finds it  using the UNIX `whereis` command. If option '-c', "</tt>\ </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-string">"'--no-CAD'  is used, the FreeCAD search and import are skipped "</tt>\ </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-string">"as a whole."</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable theia.helpers.interaction.welcome=theia.helpers.interaction-module.html#welcome"><a title="theia.helpers.interaction.welcome" class="py-name" href="#" onclick="return doclink('link-2', 'welcome', 'link-2');">welcome</a></tt> <tt class="py-op">=</tt> <tt class="py-string">u'''</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-string">\ttheia Copyright (C) 2017 Rapha\u00EBl Duque</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-string">\tLicense: GNU GPLv3+ &lt;http://gnu.org/licenses/gpl.html&gt;</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-string">\tThis is free software: you are free to change and redistribute it.</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-string">\tThere is ABSOLUTELY NO WARRANTY, to the extent permitted by law.</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-string">'''</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable theia.helpers.interaction.errorRecursion=theia.helpers.interaction-module.html#errorRecursion"><a title="theia.helpers.interaction.errorRecursion" class="py-name" href="#" onclick="return doclink('link-3', 'errorRecursion', 'link-3');">errorRecursion</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-string">It looks like you reached the maximum recursion depth of your Python</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-string">implementation (generally around 1000). The beam tracer builds the beam tree</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-string">recursively and in your case the recursion went to far. The order and threshold</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-string">simulation parameters were made to prevent this situation. What you can do:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-string">\t1. Make sure you're running with reasonable order and threshold parameters,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-string">\t2. Increase the maximum recursion depth of your Python environment by placing</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-string">\t   `sys.setrecursionlimit([whatever you need])`,</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-string">\t   right under the `"if __name__ == '__main__'` line in bin/theia, rebuild</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-string">\t   theia with `make build-theia` in the project root and rerun your simulation;</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-string">\t3. Contact your local administrator to increase the maximum recursion depth</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-string">\t   on a system-wide basis and rerun your simulation.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-string">'''</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable theia.helpers.interaction.errorAtSpecifiedLocation=theia.helpers.interaction-module.html#errorAtSpecifiedLocation"><a title="theia.helpers.interaction.errorAtSpecifiedLocation" class="py-name" href="#" onclick="return doclink('link-4', 'errorAtSpecifiedLocation', 'link-4');">errorAtSpecifiedLocation</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Error: The FreeCAD library was not found "</tt>\ </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"at the specified location %s. Usually it is in /usr/lib/freecad/lib. "</tt>\ </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"If you are not sure, omit the '-l', '--FREECAD-lib' option and theia "</tt>\ </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"will find the library on its own.\nAborting."</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt id="link-5" class="py-name" targets="Variable theia.helpers.interaction.errorWhereIs=theia.helpers.interaction-module.html#errorWhereIs"><a title="theia.helpers.interaction.errorWhereIs" class="py-name" href="#" onclick="return doclink('link-5', 'errorWhereIs', 'link-5');">errorWhereIs</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Error: Unix command 'whereis freecad' did not yield "</tt>\ </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"any directory. Please make sure you have FreeCAD installed and that "</tt>\ </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"library location is in your $PATH.\nAborting"</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt id="link-6" class="py-name" targets="Variable theia.helpers.interaction.errorUnknown=theia.helpers.interaction-module.html#errorUnknown"><a title="theia.helpers.interaction.errorUnknown" class="py-name" href="#" onclick="return doclink('link-6', 'errorUnknown', 'link-6');">errorUnknown</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"theia: Error: %s was used as the source directory for the "</tt>\ </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"FreeCAD library but an error occured, make sure your FreeCAD build is "</tt>\ </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">"correct.\nAborting."</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -149,7 +155,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Jul 11 10:03:23 2017
+    on Mon Jul 24 12:23:09 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
