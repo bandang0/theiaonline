@@ -20,8 +20,9 @@ For a quick jump into `theia`, follow these steps:
 2. Download and compile `theia`:
     * Get the latest stable version (currently v0.1.1) from the [Getting theia](releases/) page
     * Decompress the archive and run `make install` to install `theia` (or just `make build-theia` if you don't have a pdflatex environment or don't want the documentation)
-3. Go to the [Tutorials](tutos/) page to start learning `theia`. You'll find the tutorial files in the `tutos/` directory of the project.
-4. For more advanced usage, go to the [Documentation](docs/) page and read the [User Guide](docs/userguide.pdf). Print out the [Quick Reference](docs/quickref.pdf) to have a handy reference to the input format for `theia`.
+3. This installs `theia` in `~/.local/bin`, **make sure this is in your `$PATH`**
+4. Go to the [Tutorials](tutos/) page to start learning `theia`. You'll find the tutorial files in the `tutos/` directory of the project.
+5. For more advanced usage, go to the [Documentation](docs/) page and read the [User Guide](docs/userguide.pdf). Print out the [Quick Reference](docs/quickref.pdf) to have a handy reference to the input format for `theia`.
 
 
 Questions, comments, suggestions? Write to us at the address at the bottom of the page.
