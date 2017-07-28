@@ -18,7 +18,7 @@ For a quick jump into `theia`, follow these steps:
     * A pdflatex environment: check `pdflatex --version`
     * The FreeCAD libraries: install using you package manager (`apt` for Debian/Ubuntu, `yum` for SL/RHEL, `dnf` for Fedora, etc.) or download and compile the [sources](https://www.freecadweb.org/wiki/index.php?title=Download)
 2. Download and compile `theia`:
-    * Get the latest stable version (currently v0.1.1) from the [Getting theia](releases/) page
+    * Get the latest stable version (currently v0.1.2) from the [Getting theia](releases/) page
     * Decompress the archive and run `make install` to install `theia` (or just `make build-theia` if you don't have a pdflatex environment or don't want the documentation)
 3. This installs `theia` in `~/.local/bin`, **make sure this is in your `$PATH`**
 4. Go to the [Tutorials](tutos/) page to start learning `theia`. You'll find the tutorial files in the `tutos/` directory of the project.
@@ -26,7 +26,5 @@ For a quick jump into `theia`, follow these steps:
 
 
 Questions, comments, suggestions? Write to us at the address at the bottom of the page.
-
-Happy simulating!
 
 ## News
