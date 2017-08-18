@@ -75,7 +75,7 @@ This step is always necessary because some functions of the simulation (such as 
 # initialize globals (necessary to use theia in library form)
 dic = {'info': True, 'warning': True, 'text': True, 'cad': True,
 		'fname': 'optimization', 'fclib' : '/usr/lib/freecad/lib',
-        'antiClip': True}
+        'antiClip': True, 'short': False}
 settings.init(dic)
 ```
 

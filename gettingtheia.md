@@ -16,6 +16,4 @@ You can find all the `theia` releases in compressed format here:
 ### Sitting on the edge
 Prefer getting the latest from the Theia Project? Download the live version of the git repository with the following command (caution: the live git version may be broken and not fit for your purposes):
 
-`git clone git://theia.hopto.org:/home/git/theia.git`
-
-The git server is a bit jittery, so please report any problems you encounter to the maintainer.
+`git clone git://github.com/bandang0/theia.git`
