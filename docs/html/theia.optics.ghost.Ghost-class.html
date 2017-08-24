@@ -34,7 +34,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -64,21 +64,21 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class Ghost</h1><p class="nomargin-top"><span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_theia_op_4" name="uml_class_diagram_for_theia_op_4">
-<area shape="rect" id="node1_10" href="theia.optics.ghost.Ghost-class.html#Name" title="theia.optics.ghost.Ghost.Name" alt="" coords="17,162,577,182"/>
-<area shape="rect" id="node1_11" href="theia.optics.ghost.Ghost-class.html#__abstractmethods__" title="theia.optics.ghost.Ghost.__abstractmethods__" alt="" coords="17,182,577,202"/>
-<area shape="rect" id="node1_12" href="theia.optics.ghost.Ghost-class.html#__init__" title="Ghost initializer." alt="" coords="17,205,577,225"/>
-<area shape="rect" id="node1_13" href="theia.optics.ghost.Ghost-class.html#lines" title="Return the list of lines needed to print the object." alt="" coords="17,225,577,245"/>
-<area shape="rect" id="node1_14" href="theia.optics.ghost.Ghost-class.html#isHit" title="Determine if a beam hits the Ghost surface." alt="" coords="17,245,577,265"/>
-<area shape="rect" id="node1_15" href="theia.optics.ghost.Ghost-class.html#hit" title="Return the beam simply transmitted by the ghost surface." alt="" coords="17,265,577,285"/>
-<area shape="rect" id="node1" href="theia.optics.ghost.Ghost-class.html" title="Ghost class." alt="" coords="5,137,589,291"/>
-<area shape="rect" id="node2_16" href="theia.optics.component.SetupComponent-class.html#SetupCount" title="theia.optics.component.SetupComponent.SetupCount" alt="" coords="191,30,404,50"/>
-<area shape="rect" id="node2_17" href="abc.ABCMeta-class.html" title="Metaclass for defining Abstract Base Classes (ABCs)." alt="" coords="191,50,404,70"/>
-<area shape="rect" id="node2_18" href="theia.optics.component.SetupComponent-class.html#__str__" title="String representation of the component, when calling print(object)." alt="" coords="191,73,404,93"/>
-<area shape="rect" id="node2_19" href="theia.optics.component.SetupComponent-class.html#translate" title="Move the component to (current position + (X, Y, Z))." alt="" coords="191,93,404,113"/>
-<area shape="rect" id="node2" href="theia.optics.component.SetupComponent-class.html" title="SetupComponent class." alt="" coords="179,5,416,119"/>
+<center>  <map id="uml_class_diagram_for_theia_op_5" name="uml_class_diagram_for_theia_op_5">
+<area shape="rect" id="node1_10" href="theia.optics.ghost.Ghost-class.html#Name" title="theia.optics.ghost.Ghost.Name" alt="" coords="18,162,571,182"/>
+<area shape="rect" id="node1_11" href="theia.optics.ghost.Ghost-class.html#__abstractmethods__" title="theia.optics.ghost.Ghost.__abstractmethods__" alt="" coords="18,182,571,202"/>
+<area shape="rect" id="node1_12" href="theia.optics.ghost.Ghost-class.html#__init__" title="Ghost initializer." alt="" coords="18,205,571,225"/>
+<area shape="rect" id="node1_13" href="theia.optics.ghost.Ghost-class.html#lines" title="Return the list of lines needed to print the object." alt="" coords="18,225,571,245"/>
+<area shape="rect" id="node1_14" href="theia.optics.ghost.Ghost-class.html#isHit" title="Determine if a beam hits the Ghost surface." alt="" coords="18,245,571,265"/>
+<area shape="rect" id="node1_15" href="theia.optics.ghost.Ghost-class.html#hit" title="Return the beam simply transmitted by the ghost surface." alt="" coords="18,265,571,285"/>
+<area shape="rect" id="node1" href="theia.optics.ghost.Ghost-class.html" title="Ghost class." alt="" coords="5,137,583,291"/>
+<area shape="rect" id="node2_16" href="theia.optics.component.SetupComponent-class.html#SetupCount" title="theia.optics.component.SetupComponent.SetupCount" alt="" coords="189,30,402,50"/>
+<area shape="rect" id="node2_17" href="abc.ABCMeta-class.html" title="Metaclass for defining Abstract Base Classes (ABCs)." alt="" coords="189,50,402,70"/>
+<area shape="rect" id="node2_18" href="theia.optics.component.SetupComponent-class.html#__str__" title="String representation of the component, when calling print(object)." alt="" coords="189,73,402,93"/>
+<area shape="rect" id="node2_19" href="theia.optics.component.SetupComponent-class.html#translate" title="Move the component to (current position + (X, Y, Z))." alt="" coords="189,93,402,113"/>
+<area shape="rect" id="node2" href="theia.optics.component.SetupComponent-class.html" title="SetupComponent class." alt="" coords="177,5,414,119"/>
 </map>
-  <img src="uml_class_diagram_for_theia_op_4.gif" alt='' usemap="#uml_class_diagram_for_theia_op_4" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_theia_op_5.gif" alt='' usemap="#uml_class_diagram_for_theia_op_5" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -99,6 +99,8 @@ SetupCount (inherited): class attribute, counts all setup components.
     [integer]
 Name: class attribute. [string]
 HRCenter (inherited): center of the principal face of the Ghost in space.
+    [3D vector]
+ARCenter (inherited): center of the secondary face of the Ghost in space.
     [3D vector]
 HRnorm (inherited): normal unitary vector the this principal face,
     supposed to point outside the media. [3D vector]
@@ -164,7 +166,7 @@ Ref (inherited): reference string (for keeping track with the lab). [string]
         <span class="summary-sig-arg">Theta</span>=<span class="summary-sig-default">1.57079632679</span>,
         <span class="summary-sig-arg">Phi</span>=<span class="summary-sig-default">0.0</span>,
         <span class="summary-sig-arg">Ref</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">Diameter</span>=<span class="summary-sig-default">0.05</span>)</span><br />
+        <span class="summary-sig-arg">Diameter</span>=<span class="summary-sig-default">0.5</span>)</span><br />
       Ghost initializer.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="theia.optics.ghost-pysrc.html#Ghost.__init__">source&nbsp;code</a></span>
@@ -354,7 +356,7 @@ Ref (inherited): reference string (for keeping track with the lab). [string]
         <span class="sig-arg">Theta</span>=<span class="sig-default">1.57079632679</span>,
         <span class="sig-arg">Phi</span>=<span class="sig-default">0.0</span>,
         <span class="sig-arg">Ref</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">Diameter</span>=<span class="sig-default">0.05</span>)</span>
+        <span class="sig-arg">Diameter</span>=<span class="sig-default">0.5</span>)</span>
     <br /><em class="fname">(Constructor)</em>
   </h3>
   </td><td align="right" valign="top"
@@ -494,7 +496,7 @@ Returns a dictionary of beams with keys:
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="http://theia.hopto.org:56000">theia</a></th>
+            ><a class="navbar" target="_top" href="http://theia.hopto.org">theia</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -502,7 +504,7 @@ Returns a dictionary of beams with keys:
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Mon Jul 24 12:23:09 2017
+    on Thu Aug 24 10:17:20 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
