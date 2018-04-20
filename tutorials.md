@@ -12,4 +12,6 @@ From here, you can jump to tutorial pages on `theia` as a library for scripting 
 All the tutorial pages are listed here with their corresponding files:
 
 * [First Scripting Tutorial](basic-scripting-tutorial.html): about basic scripting with `theia`, treats the `optimization.py` file,
-* [First CLI Tutorial](first-cli-tutorial.html): on first usage of `theia` as a command tool, treats the `alloptics.tia`file.
+* [First CLI Tutorial](first-cli-tutorial.html): on first usage of `theia` as a command tool, treats the `alloptics.tia`file,
+* [Enhancing theia with more optics](enhancing-optics.html): on adding optical component to theia's arsenal,
+* [Enhancing theia's output](enhancing-output.html): on customizing the output of theia.
