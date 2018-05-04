@@ -52,8 +52,19 @@ from ..optics.filter import Filter
 
 # in the load function
 
-constructor = { ...
+constructors = { ...
     'fl': Filter,
     ...}
 
 ```
+
+### 2: Specifying the optical properties of the component
+
+We will describe the optics of filters through a new class.
+
+All optics inherit from the `optics.optic.Optic` class, which provides methods to determine whether the optic was hit by a beam, on which face, etc.
+
+For our new filter component, we will write a new `optics.filter.Filter` class with:
+- A constructor that will read only the information relevant to the filter : X, Y, Z, Theta, Phi, Diameter, Thickness, Wavelength, Ref and call the `optics.optic.Optic` constructor,
+- Reimplement the `hit` method to detail what the filter does to beams (as described in the intro above)
+ 
