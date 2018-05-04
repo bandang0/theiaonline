@@ -66,5 +66,4 @@ All optics inherit from the `optics.optic.Optic` class, which provides methods t
 
 For our new filter component, we will write a new `optics.filter.Filter` class with:
 - A constructor that will read only the information relevant to the filter : X, Y, Z, Theta, Phi, Diameter, Thickness, Wavelength, Ref and call the `optics.optic.Optic` constructor,
-- Reimplement the `hit` method to detail what the filter does to beams (as described in the intro above)
- 
+- Reimplement the `hit` method to detail what the filter does to beams (as described in the intro above).
