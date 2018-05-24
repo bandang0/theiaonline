@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Basic CLI tutorial"
+title: "Basic CLI Tutorial"
 ---
 
 In this tutorial, we will explain the basic CLI usage of `theia` using the example of the `alloptics.tia` file found in the `tutos/` directory of the project repository.

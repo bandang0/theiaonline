@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Basic Scripting tutorial"
+title: "Basic Scripting Tutorial"
 ---
 
 In this first scripting tutorial, we will treat a simple case of design of an optical bench using the `theia` library. This tutorial may be a basis for developing more complex scripts, and aims at exposing the capabilities of the library.

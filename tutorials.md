@@ -13,5 +13,6 @@ All the tutorial pages are listed here with their corresponding files:
 
 * [First Scripting Tutorial](basic-scripting-tutorial.html): about basic scripting with `theia`, treats the `optimization.py` file,
 * [First CLI Tutorial](first-cli-tutorial.html): on first usage of `theia` as a command tool, treats the `alloptics.tia`file,
-* [Enhancing theia with more optics](enhancing-optics.html): on adding optical component to theia's arsenal,
-* [Enhancing theia's output](enhancing-output.html): on customizing the output of theia.
+* [The Implementation of Gaussian Optics in theia](optics-implementation.html): on where and how the calculation of daughter beam curvatures is done in theia,
+* [Enhancing theia with more Optics](enhancing-optics.html): on adding optical components to theia,
+* [Enhancing theia's Output](enhancing-output.html): on customizing the output of theia.
