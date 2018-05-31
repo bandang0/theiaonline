@@ -51,7 +51,7 @@ Beam: LAS-tt {
 How to use this method? When passed to the `helpers.tools.formatter` function, a single string is returned, ready to be printed (or written to a file). Thus you may use the following to print the info on a optic (`mirror1` for example):
 
 ```python
-print mirror1.lines()
+print tools.formatter(mirror1.lines())
 ```
 
 Thus one has the liberty to reimplement these functions (keeping the curly braces structure to integrate well) and use them to print text info or write it a to file.
@@ -62,7 +62,7 @@ As explained in the User Guide, the text optical output is divided into 2 sectio
 
 #### 1. Simulation data section
 
-This output is defined in the beginning of the `running.simulation.writeOut` method. The info of this section can be changed here. Again, a list of strings to write is built (with the curly braces format).
+This output is defined in the beginning of the `running.simulation.Simulation.writeOut` method. The info of this section can be changed there. Again, a list of strings to write is built (with the curly braces format).
 
 #### 2. Beam listing section
 
@@ -111,14 +111,14 @@ In order to read this file **only once** during the run, here is an implementati
     self.OutputFormat = helpers.tools.readOutputFormat(settings.fname + '.ui')
     ```
 
-2. To print the beams characteristics, use the `OuputLines` method (like in the previous paragraph), but **passing the `OutputFormat` attribute** along.
+2. To print the beams characteristics, use the `outputLines` method (like in the previous paragraph), but **passing the `OutputFormat` attribute** along.
 
     ```python
     # in the writeOut method of the Simulation class, in the "beam listing" section
-     outList = tree.OutputLines(self.OutputFormat) # instead of just tree.OutputLines
+     outList = tree.outputLines(self.OutputFormat) # instead of just tree.outputLines()
     ```
 
-3. Reimplement the `OutputLines` using the new argument to customize the output. For example, imagine that we want the beam length, power and Rayleigh ranges to be output, and that the output format file thus has this content:
+3. Reimplement the `outputLines` using the new argument to customize the output. For example, imagine that we want the beam length, power and Rayleigh ranges to be output, and that the output format file thus has this content:
 
 ```text
 Length
@@ -130,7 +130,7 @@ These are the tokens to call the `Length`, `P` attributes and the `rayleigh` met
 
 Then, let us say that the output format parser (in the Simulation class constructor) returned the string "Length Power rayleigh()".
 
-Finally, we may call these attributes and method in the `OutputLines` method using python's `eval` function, and reimplement like so:
+Finally, we may call these attributes and method in the `outputLines` method using python's `eval` function, and reimplement like so:
 
 ```python
 def outputLines(self, formatString):
@@ -168,7 +168,7 @@ def outputLines(self, formatString):
 
 ```
 
-Basically, here we **evaluated** "beam.Length", "beam.P", "beam.rayleigh()", converted to string, and made a list of these strings.
+Basically, here we **evaluated** "beam.Length", "beam.P", "beam.rayleigh()", converted the results to strings, and made a list of these strings.
 
 The output here would be like so:
 
@@ -180,4 +180,4 @@ The output here would be like so:
 	}
 ```
 
-The units are missing, but we can put them in the output format file and handle that in the parser. There is no limit to what we can pass all the way down to the `OutputLines` method.
+The units are missing, but we can put them in the output format file and handle that in the parser. There is no limit to what we can pass all the way down to the `outputLines` method.
