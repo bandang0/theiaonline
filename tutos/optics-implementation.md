@@ -46,7 +46,7 @@ Given a beam and an optic, these are the steps to determine on which face and at
 
 2. This is done within the `isHit` method, which after calling `isHitDics` chooses among the eventual impact points on the AR, HR and side of the optic **which point is hit first**. Then it returns the info on the closest impact point, the impacted face (HR, AR or side) and the distance from the origin of the beam to this impact point.
 
-3. This is done within the `hit` method, which after calling `isHit` returns the daughter beams produced by the interaction at the location given by `isHit`. The description of how this is done is the object of the next paragraph. 
+3. This is done within the `hit` method, which after calling `isHit` returns the daughter beams produced by the interaction at the location given by `isHit`. The description of how this is done is the object of the next paragraph.
 
 ### 3. Calculation of daughter beams
 
