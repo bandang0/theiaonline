@@ -5,7 +5,7 @@ title: "Basic CLI Tutorial"
 
 In this tutorial, we will explain the basic CLI usage of `theia` using the example of the `alloptics.tia` file found in the `tutos/` directory of the project repository.
 
-To learn more on the inpu `.tia` file, please see the Quick Reference found at the [Documentation](../docs/) page.
+To learn more on the input `.tia` file, please see the Quick Reference found at the [Documentation](../docs/) page.
 
 ### Situation
 
@@ -15,13 +15,13 @@ We would like to simulate the setup described in the following figure. This setu
 
 ### The input file syntax
 
-In the input file, each line specifies a optical component or a parameter for the simulation. You can put in comments with the hash symbol `#`.
+In the input file, each line specifies **one optical component** or **one parameter** for the simulation. You can put in comments with the hash symbol `#`.
 
-* If a line starts with `order = ` or `threshold = `, then what follows is a Python expression reducing to an integer or a floating point number to specify the order and threshold of the simulation. Recall that the order of the simulation puts a limit on how *stray* a simulated beam can be: reflecting from a AR surface or transmitting by a HR surface increases the *strayness* order of a beam by 1, and beams are no longer traced if their strayness order is greater than the simulation order. Likewise, beams with powers lower than the simulation threshold are no longer traced.
+* If a line starts with `order = ` or `threshold = `, then what follows is a **Python expression** reducing to an integer or a floating point number to specify the order and threshold of the simulation. Recall that the order of the simulation puts a limit on how *stray* a simulated beam can be: reflecting from a AR surface or transmitting by a HR surface increases the *strayness* order of a beam by 1, and beams are no longer traced if their strayness order is greater than the simulation order. Likewise, beams with powers lower than the simulation threshold are no longer traced.
 
-* If a line starts with `bm`, `bs`, `sp`, `th`, `tk`, `mr`, `bd`, `gh`, then the lines specify respectively a Gaussian input beam, a beam-splitter, a special surface (of which the user specifies the actions of the surfaces on the strayness of beams), a thin lens, a thick lens, a mirror, a beam dump or a ghost surface (respectively). After these keywords, the optical parameters follow as a comma-separated list of Python expressions for the constructors. The meaning and order of these parameters are detailed in the Quick Reference document. Note that **all constructors have complete default values**, thus you can specify as much info as you like (from none to all parameters).
+* If a line starts with `bm`, `bs`, `sp`, `th`, `tk`, `mr`, `bd`, `gh`, then the lines specify respectively a Gaussian input beam, a beam-splitter, a special surface (of which the user specifies the actions of the surfaces on the strayness of beams), a thin lens, a thick lens, a mirror, a beam dump or a ghost surface. After these keywords, the optical parameters follow as a comma-separated list of Python expressions for the constructors. The meaning and order of these parameters are detailed in the Quick Reference document. Note that **all constructors have complete default values**, thus you can specify as much info as you like (from none to all parameters).
 
-* If a line starts with `bo`, then it specifies the beginning of an optical bench, and all input until the next `bo` line will be translated in space by the coordinates given by this `bo` entry. This allows to move whole benches around instead of changing the coordinates of each optic individually.
+* If a line starts with `bo`, then it specifies the **beginning of an optical bench**, and all input until the next `bo` line will be translated in space by the coordinates given by this `bo` entry. This allows to move whole benches around instead of changing the coordinates of each optic individually.
 
 * All other lines are used for the name of the simulation, which appears here and there in the output files.
 
@@ -97,28 +97,29 @@ Then comes the Gaussian data: you find the pair of waist widths (in X and Y) and
 
 ### The CAD file
 
-Now, open the `alloptics.fcstd` file with FreeCAD. On the left panel, you will find the list of all the simulation objects (beams and optics). Each of these objects contain the relevant optical information as calculated during the simulation.
+Now, open the `alloptics.fcstd` file with FreeCAD. On the left panel, you will find the **list of all the simulation objects** (beams and optics). Each of these objects contain the relevant optical information as calculated during the simulation.
 
 These objects benefit of all the support provided by the CAD software: they are selectable in the view provider, and can be manipulated at will in terms of position and orientation, etc.
 
 #### 3D navigation
 
-The main interest of the CAD software is to benefit from the high level 3D navigation capabilities. The most useful ones are:
+The main interest of the CAD software is to benefit from the **high level 3D navigation capabilities**. The most useful ones are:
 
 * Zooming in and out: with the mouse scroll,
 * Translating the view: with the `Ctrl` key and the right mouse button,
 * Rotating the view: with the `Ctrl` key kept down and the right-then-left mouse button.
 
-Please see the [FreeCAD documentation](https://www.freecadweb.org/wiki/Download#FreeCAD_documentation) to wee all that FreeCAD has to offer in terms of CAD.
+Please see the [FreeCAD documentation](https://www.freecadweb.org/wiki/Download#FreeCAD_documentation) to see all that FreeCAD has to offer in terms of CAD.
+
 #### Reviewing the Gaussian data
 
-By clicking in the left panel on a view object, the corresponding object in the 3D view appears in green (and conversely selecting an object in the 3D view highlights the view object in the left panel). Right below the object list, the characteristics of the object appear (curvatures, diameters for mirrors, waists, power for beams, etc.).
+By **clicking in the left panel** on a view object, the corresponding object in the 3D view appears in green (and conversely selecting an object in the 3D view highlights the view object in the left panel). Right below the object list, the characteristics of the object appear (curvatures, diameters for mirrors, waists, power for beams, etc.).
 
 This allows for reviewing the Gaussian data of the beams dynamically.
 
 #### Moving the optics around
 
-The objects can be dynamically moved around in the 3D view. For example, notice that the beam emerging from M1 and finishing on the beam dump BD arrives at the beam dump exactly in its middle. If we want this beam to arrive at some other point on the beam dump, we may change the coordinates of the beam dump by clicking on it in the 3D view, then changing the`x,y,z` parameters of the `Position` property in the bottom panel (below `Placement`).
+The objects can be **dynamically moved around** in the 3D view. For example, notice that the beam emerging from M1 and finishing on the beam dump BD arrives at the beam dump exactly in its middle. If we want this beam to arrive at some other point on the beam dump, we may change the coordinates of the beam dump by clicking on it in the 3D view, then changing the`x,y,z` parameters of the `Position` property in the bottom panel (below `Placement`).
 
 Once we have found the correct position on the beam dump, we may write down the new position and keep it for later. We may then update the optics position in the configuration file (and on the bench in the lab).
 

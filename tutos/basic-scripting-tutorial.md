@@ -3,7 +3,7 @@ layout: page
 title: "Basic Scripting Tutorial"
 ---
 
-In this first scripting tutorial, we will treat a simple case of design of an optical bench using the `theia` library. This tutorial may be a basis for developing more complex scripts, and aims at exposing the capabilities of the library.
+In this first scripting tutorial, we will treat a simple use case of the theia library to design an optical bench. This tutorial may be a basis for developing more complex scripts, and aims at exposing the capabilities of the library.
 
 To learn more on the classes and functions used here, please report to the (extensive) API documentation at the [Documentation](../../docs/) page.
 
@@ -17,7 +17,7 @@ The question is:
 
 Or more generally:
 
-*Given a beam waist, may we find a position for lens L2 such that the beam output from the L1-L2 system has a that given waist?*
+*Given a beam waist, may we find a position for lens L2 such that the beam output from the L1-L2 system has that given waist?*
 
  ![]( ../../img/lenses.png )
 
@@ -47,7 +47,7 @@ In order to solve this problem, we will use the `theia` library to implement the
 
 ### 1. Importing the right tools
 
-First, we must import the tools we will use for plotting (in our case we will use `matplotlib`). If we also want to write a CAD file at some time, we will need the FreeCAD libraries. Finally we import all packages of `theia` which are relevant to our case: simulation class, beams and thin lenses, units and settings. Simulation class and settings are almost always mandatory because all simulations use a Simulation object and settings are used to initialize the global variables which can be used by the simulation functions.
+First, we must **import the tools** we will use for plotting (in our case we will use `matplotlib`). If we also want to write a CAD file at some time, we will need the FreeCAD libraries. Finally we import all packages of `theia` which are relevant to our case: simulation class, beams and thin lenses, units and settings. The **Simulation class and settings are almost always mandatory** because all simulations use a Simulation object and settings are used to initialize the global variables which can be used by the simulation functions.
 
 ```python
 #plotting stuff
@@ -127,14 +127,14 @@ In this case, the optimization set is made of 100 positions around 40 cm (which 
 
 #### a. Load the input beam
 
-First, we load the beam in the input beams of the simulation object once and for all
+First, we load the beam in the input beams of the simulation object once and for all.
 ```python
 # load beam
 simu.InBeams = [bm]
 ```
 #### b. Iterate the simulation over all possibilities for L2
 
-Then, we iterate over all the possible positions (`centers`) of the L2 lens by creating a thin lens of focal 20 cm at the position and loading this lens and L1 into the optics list (`OptList`) of the simulation object.
+Then, we iterate over all the possible positions (`centers`) of the L2 lens by **creating a thin lens of focal 20 cm at the position** and loading this lens and L1 into the optics list (`OptList`) of the simulation object.
 
 For each of the positions, we run the simulation.
 ```python
@@ -148,7 +148,7 @@ for center in centers:
 	simu.run()
 ```
 
-Now that the simulation has occurred and the new beams have populated the simulation's beam trees, we can extract the Gaussian data of the output beam and save it in our lists of waist widths and positions for plotting later.
+Now that the simulation has occurred and the new beams have populated the simulation's beam trees, we can **extract the Gaussian data** of the output beam and save it in our lists of waist widths and positions for plotting later.
 
 #### c. Make a reference to the output beam for treatment
 

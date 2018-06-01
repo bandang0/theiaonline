@@ -14,7 +14,7 @@ For all beams and optics, there exists a `lines` method, which returns a **list 
 
 **Note that in the current version of theia** (v0.1.3), these methods are **implemented but never used for output**. They're just waiting there to be used in a outputting function.
 
-For example, here is a extract from the `lines` method of the `optics.beam.GaussianBeam` class:
+For example, here is an extract from the `lines` method of the `optics.beam.GaussianBeam` class:
 
 ```python
 def lines(self):
@@ -54,7 +54,7 @@ How to use this method? When passed to the `helpers.tools.formatter` function, a
 print tools.formatter(mirror1.lines())
 ```
 
-Thus one has the liberty to reimplement these functions (keeping the curly braces structure to integrate well) and use them to print text info or write it a to file.
+Thus one has the liberty to reimplement these functions (keeping the curly braces structure to integrate well) and use them to print text info or write it to a file.
 
 ### Method 2: Permanent changes using the beam tree and simulation printing methods
 
@@ -72,24 +72,24 @@ Essentially it all happens in the following lines:
 
 ```python
 if beam.Length == 0.:
-                sList = ["(%s, %s) [open] %s {" % (beam.Optic, beam.Face, Ref)]
-            else:
-                if self.R is None and self.T is None:
-                    sList = ["(%s, %s) %sm [end] (%s, %s) %s {" \
-                        % (beam.Optic, beam.Face, str(beam.Length),
+    sList = ["(%s, %s) [open] %s {" % (beam.Optic, beam.Face, Ref)]
+else:
+    if self.R is None and self.T is None:
+        sList = ["(%s, %s) %sm [end] (%s, %s) %s {" \
+                % (beam.Optic, beam.Face, str(beam.Length),
                             beam.TargetOptic, beam.TargetFace, Ref)]
-                else:
-                    sList = ["(%s, %s) %sm (%s, %s) %s {" \
-                        % (beam.Optic, beam.Face, str(beam.Length),
+    else:
+        sList = ["(%s, %s) %sm (%s, %s) %s {" \
+                % (beam.Optic, beam.Face, str(beam.Length),
                             beam.TargetOptic, beam.TargetFace, Ref)]
 
-            sList = sList + ["Waist Pos: (%s, %s)m" \
+    sList = sList + ["Waist Pos: (%s, %s)m" \
                                 %(str(beam.DWx), str(beam.DWy)),
-                            "Waist Size: (%s, %s)mm" \
+                    "Waist Size: (%s, %s)mm" \
                                 %(str(beam.Wx/mm), str(beam.Wy/mm)),
-                            "Direction: (%s, %s)deg" %(str(sph[0]/deg),
-                                                    str(sph[1]/deg)),
-                            "}"]
+                    "Direction: (%s, %s)deg" \
+                                %(str(sph[0]/deg), str(sph[1]/deg)),
+                    "}"]
 ```
 
 All this does is check if the beams are end beams or open beams, and describe what the output lines contain. In this example, each beam section will contain the optic the beam departs from, the length, the target beam, the waist positions, sizes, and the direction of the beam.
@@ -118,7 +118,9 @@ In order to read this file **only once** during the run, here is an implementati
      outList = tree.outputLines(self.OutputFormat) # instead of just tree.outputLines()
     ```
 
-3. Reimplement the `outputLines` using the new argument to customize the output. For example, imagine that we want the beam length, power and Rayleigh ranges to be output, and that the output format file thus has this content:
+3. Reimplement the `outputLines` using the new argument to customize the output.
+
+For example, imagine that we want the beam length, power and Rayleigh ranges to be output, and that the output format file thus has this content:
 
 ```text
 Length
