@@ -3,7 +3,7 @@ layout: page
 title: "Enhancing theia -- Customizing the Output"
 ---
 
-In this tutorial, we will learn how to **customize the text output** of theia (not the CAD output). There are two methods which we choose according to whether we want the information output to be the same in each simulation (method 1), or we want each run to be customized by a separate configuration file (method 2).
+In this tutorial, we will learn how to **customize the text output** of theia (not the CAD output). There are two approaches which we choose according to whether we want the information output to be the same in each simulation (method 1 and 2), or we want each run to be customized by a separate configuration file (method 3).
 
 Virtually, any information that is accessible to the objects (beams, optics, simulations, etc.) can be output, and it suffices to change the output functions at the right place in the code.
 
