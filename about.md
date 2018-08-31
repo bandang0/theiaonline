@@ -55,7 +55,7 @@ To learn on `theia`, you will find (after installation) in `doc/`:
 - `quickref.pdf` for an at-a-glance reference on the `.tia` format;
 - `apiguide.pdf` for a detailed guide to the `theia` library.
 
-For an easy online documentation, surf to the [API online documentation]({{ site.url }}docs/html/index.html).
+For an easy online documentation, surf to the [API online documentation]({{site.url}}/docs/html/index.html).
 
 Don't forget that once you've installed `theia` you can call `pydoc [IMPORT PATH TO A THEIA MODULE OR PACKAGE]` from the command line for a quick query.
 
@@ -68,4 +68,4 @@ See the LICENSE file it the project root directory for more details.
 `theia` is also open source software, so please feel inventive and contact `raphael.duque@polytechnique.edu` for suggestions, comments, access to the git repository and bug reporting.
 
 ## Acknowledgements
-This work owes a great deal to many people in and out of the gravitational interferometry community. We would like to thank H.Yamamoto, G. Hemming and G. Duque among others.
+This work owes a great deal to many people in and out of the gravitational interferometry community. We would like to thank H. Yamamoto, G. Hemming and G. Duque among others.
