@@ -19,7 +19,7 @@ email: raphael.duque@polytechnique.edu
 description: >
   theia: a 3D Gaussian Beam Tracer for Gravitational Interferometers
 
-url: "http://theia.hopto.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bandang0.github.io/theiaonline/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown

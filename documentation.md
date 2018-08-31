@@ -27,4 +27,4 @@ Some more documentation is:
 * [theia Status Update](statusupdate.pdf): A small presentation relating the state of the project right before v0.1.1.
 
 ### Former documentation
-On theia.hopto.org we keep only the most recent documentation. If you are looking for the documentation of an older version of `theia`, we recommend you download the version you are looking for from the [Getting Theia](../releases) page and build the documentation yourself, as it is described in the `README.md` file.
+On theiaonline we keep only the most recent documentation. If you are looking for the documentation of an older version of `theia`, we recommend you download the version you are looking for from the [Getting Theia](../releases) page and build the documentation yourself, as it is described in the `README.md` file.
