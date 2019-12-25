@@ -5,7 +5,7 @@ title: "Basic Scripting Tutorial"
 
 In this first scripting tutorial, we will treat a simple use case of the theia library to design an optical bench. This tutorial may be a basis for developing more complex scripts, and aims at exposing the capabilities of the library.
 
-To learn more on the classes and functions used here, please report to the (extensive) API documentation at the [Documentation](../../docs/) page.
+To learn more on the classes and functions used here, please report to the (extensive) API documentation at the [Documentation](../docs/) page.
 
 ### Situation
 
@@ -19,7 +19,7 @@ Or more generally:
 
 *Given a beam waist, may we find a position for lens L2 such that the beam output from the L1-L2 system has that given waist?*
 
- ![]( ../../img/lenses.png )
+ ![]( ../img/lenses.png )
 
 ### Algorithm
 
@@ -195,7 +195,7 @@ plt.show()
 
 In the case of a 1 mm input beam, the results are given by the following graphs. It is easy to notice that the 2F configuration is optimal for the width.
 
-![]( ../../img/optimization.png )
+![]( ../img/optimization.png )
 
 ### Troubleshooting
 

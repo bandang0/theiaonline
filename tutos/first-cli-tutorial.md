@@ -11,7 +11,7 @@ To learn more on the input `.tia` file, please see the Quick Reference found at 
 
 We would like to simulate the setup described in the following figure. This setup will allow us to review all the possible optics available in the `theia` tool.
 
-![](../../img/allopticssetup.png)
+![](../img/allopticssetup.png)
 
 ### The input file syntax
 
@@ -127,7 +127,7 @@ Note: manipulating the optics in FreeCAD **will not update the Gaussian data of 
 
 The next figure is a screenshot from a more complex example.
 
-![](../../img/screenshot.png)
+![](../img/screenshot.png)
 
 #### Exporting to other formats
 
