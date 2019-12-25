@@ -65,7 +65,7 @@ In the effort of taking down walls in the way of physics and computation, `theia
 See the LICENSE file it the project root directory for more details.
 
 ## Contributing
-`theia` is also open source software, so please feel inventive and contact `raphael.duque@polytechnique.edu` for suggestions, comments, access to the git repository and bug reporting.
+`theia` is also open source software, so please feel inventive and contact `duque@iap.fr` for suggestions, comments, access to the git repository and bug reporting.
 
 ## Acknowledgements
 This work owes a great deal to many people in and out of the gravitational interferometry community. We would like to thank H. Yamamoto, G. Hemming and G. Duque among others.

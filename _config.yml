@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: The Theia Project
 author: Raphaël Duque
-email: raphael.duque@polytechnique.edu
+email: duque@iap.fr
 description: >
   theia: a 3D Gaussian Beam Tracer for Gravitational Interferometers
 
